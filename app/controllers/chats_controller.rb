@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+  before_action :require_login, only: %i[create destroy]
 
   def create
     @chat = current_user.chats.new(chat_params)
