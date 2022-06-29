@@ -1,0 +1,19 @@
+<h1>Chatrooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>thumbnail</th>
+      <th>球場名</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chatrooms.each do |chatroom| %>
+      <tr>
+        <td><%= chatroom.thumbnail %></td>
+        <td><%= chatroom.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
