@@ -1,0 +1,22 @@
+<h1><%= @chatroom.name %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>ユーザー</th>
+      <th>チャット</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @chats.each do |chat| %>
+    <tr>
+      <td><%= chat.user.nickname %></td>
+      <td><%= chat.body %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+<%= form_with url: chatroom_chats_url(@chatroom) do |form| %>
+  <%= form.text_field :body %>
+  <%= form.submit "送信" %>
+<% end %>

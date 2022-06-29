@@ -13,6 +13,7 @@
       <tr>
         <td><%= chatroom.thumbnail %></td>
         <td><%= chatroom.name %></td>
+        <td><%= link_to "入場", chatroom_path(chatroom) %></td>
       </tr>
     <% end %>
   </tbody>
