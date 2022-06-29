@@ -12,6 +12,13 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :profile %>
+    <%= form.file_field :profile, id: 'profile' %>
+    <%= form.hidden_field :profile_cache %>
+    <%= image_tag user.profile.url, id: 'profile_preview' %>
+  </div>
+
+  <div class="field">
     <%= form.label :nickname %>
     <%= form.text_field :nickname %>
   </div>
