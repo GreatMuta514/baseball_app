@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      chatroom: チャットルーム
+      chat: チャット
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        profile: プロフィール画像
+        password: パスワード
+        password_confirmation: パスワード確認
+        rank: ランク
+      chatroom:
+        name: 球場名
+        thumbnail: サムネイル
+      chat:
+  attributes:
+    created_at: 作成日時
+    updated_at: 更新日時

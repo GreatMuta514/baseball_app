@@ -1,17 +1,15 @@
-<h1>Chatrooms</h1>
+<h1><%= t".title" %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>thumbnail</th>
-      <th>球場名</th>
+      <th><%= Chatroom.human_attribute_name(:name) %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @chatrooms.each do |chatroom| %>
       <tr>
-        <td><%= chatroom.thumbnail %></td>
         <td><%= chatroom.name %></td>
         <td><%= link_to "入場", chatroom_path(chatroom) %></td>
       </tr>

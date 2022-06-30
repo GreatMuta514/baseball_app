@@ -1,0 +1,17 @@
+ja:
+  users:
+    new:
+      title: ユーザー登録
+    index:
+      title: ユーザー一覧
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+  user_sessions:
+    new:
+      title: ログイン
+    form:
+      button: ログイン
+  chatrooms:
+    index:
+      title: チャットルーム

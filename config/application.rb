@@ -11,6 +11,11 @@ module BaseballApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    #デフォルトの言語をjaに設定
+    config.i18n.default_locale = :ja
+    #複数のローけるファイルを読み込むように設定
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
     # デフォルトでmailboxのルーティングが設定されていたので削除
     initializer(:remove_action_mailbox_and_activestorage_routes, after: :add_routing_paths) do |app|
       app.routes_reloader.paths.delete_if { |path| path =~ /activestorage/ }

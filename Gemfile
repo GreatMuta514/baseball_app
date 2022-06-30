@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+# 日本語化機能
+gem 'rails-i18n'
 # 画像投稿機能
 gem 'carrierwave'
 gem 'mini_magick'
