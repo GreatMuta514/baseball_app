@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :require_login, only: %i[index show edit update destroy]
+  before_action :correct_user, only: %i[edit update destroy]
 
   # GET /users
   def index
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, danger: 'User was successfully destroyed.'
+    redirect_to new_user_url, success: 'User was successfully destroyed.'
   end
 
   private
@@ -55,4 +56,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:profile, :profile_cache, :nickname, :email, :password, :password_confirmation)
   end
+
+  def correct_user
+    redirect_back fallback_location: chatrooms_path if @user != current_user
+  end
+
 end
