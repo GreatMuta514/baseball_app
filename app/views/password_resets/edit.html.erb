@@ -1,0 +1,12 @@
+<h1>パスワードリセット</h1>
+<%= form_with model: @user, url: password_reset_url(@token), local: true do |f| %>
+	 
+	<label for="password"><%= "パスワード" %></label>
+  <%= f.text_field :password, class:'form-control', id:'user_password' %>
+
+  <label for="password_cofirmation"><%= "パスワード確認" %></label>
+  <%= f.text_field :password_confirmation, class:'form-control', id:'user_password_confirmation' %>
+  
+	<%= f.submit  class: 'btn btn-primary' %>
+
+<% end %>
