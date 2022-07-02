@@ -1,23 +1,7 @@
 <h1><%= @chatroom.name %></h1>
-
-  <% @chats.each do |chat| %>
-    <% if chat.user == current_user %>
-    <%# <% binding.pry %>
-      <div class="mychat">
-        <%= chat.user.nickname %>
-        <%= chat.body %>
-        <br>
-      </div>
-    <% else %>
-        <%= chat.user.nickname %>
-        <%= chat.body %>
-        <br>
-    <% end %>
-  <% end %>
+  <%= render partial: 'chatrooms/chat', collection: @chats %>
 <br>
-<div class="mychat">
-<%= form_with url: chatroom_chats_url(@chatroom) do |form| %>
-  <%= form.text_field :body %>
+<%= form_with url: chatroom_chats_url(@chatroom), local: false do |form| %>
+  <%= form.text_field :body, id: 'chat_content' %>
   <%= form.submit "送信" %>
 <% end %>
-</div>

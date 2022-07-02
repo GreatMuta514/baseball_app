@@ -1,0 +1,11 @@
+<% if chat.user == current_user %>
+  <div class="mychat">
+    <%= chat.user.nickname %>
+    <%= chat.body %>
+    <br>
+  </div>
+<% else %>
+    <%= chat.user.nickname %>
+    <%= chat.body %>
+    <br>
+<% end %>
