@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+# jQuery
+gem 'jquery-rails'
 # 日本語化機能
 gem 'rails-i18n'
 # 画像投稿機能
@@ -24,7 +26,6 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

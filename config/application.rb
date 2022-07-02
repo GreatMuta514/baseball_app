@@ -13,7 +13,7 @@ module BaseballApp
 
     #デフォルトの言語をjaに設定
     config.i18n.default_locale = :ja
-    #複数のローけるファイルを読み込むように設定
+    #複数のローケルファイルを読み込むように設定
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
     # デフォルトでmailboxのルーティングが設定されていたので削除

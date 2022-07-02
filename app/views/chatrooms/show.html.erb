@@ -1,22 +1,23 @@
 <h1><%= @chatroom.name %></h1>
-<table>
-  <thead>
-    <tr>
-      <th><%= User.model_name.human %></th>
-      <th><%= Chat.model_name.human %></th>
-    </tr>
-  </thead>
-  <tbody>
+
   <% @chats.each do |chat| %>
-    <tr>
-      <td><%= chat.user.nickname %></td>
-      <td><%= chat.body %></td>
-    </tr>
+    <% if chat.user == current_user %>
+    <%# <% binding.pry %>
+      <div class="mychat">
+        <%= chat.user.nickname %>
+        <%= chat.body %>
+        <br>
+      </div>
+    <% else %>
+        <%= chat.user.nickname %>
+        <%= chat.body %>
+        <br>
+    <% end %>
   <% end %>
-  </tbody>
-</table>
 <br>
+<div class="mychat">
 <%= form_with url: chatroom_chats_url(@chatroom) do |form| %>
   <%= form.text_field :body %>
   <%= form.submit "送信" %>
 <% end %>
+</div>
