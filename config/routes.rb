@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  #actioncable
+  mount ActionCable.server => '/cable'
   #メール関係
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   resources :password_resets, only: [:new, :create, :edit, :update]

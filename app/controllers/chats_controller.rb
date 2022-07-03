@@ -4,11 +4,8 @@ class ChatsController < ApplicationController
   def create
     @chat = current_user.chats.new(chat_params)
     @chat.chatroom_id = params[:chatroom_id]
-    if @chat.save
-      # redirect_to chatroom_path(params[:chatroom_id]), success: "チャットを送信しました"
-    else
-      # redirect_to chatroom_path(params[:chatroom_id]), danger: "チャットを送信できませんでした"
-    end
+    @chat.save!
+    ActionCable.server.broadcast 'room_channel', { chat: @chat.template }
   end
 
   def destroy
