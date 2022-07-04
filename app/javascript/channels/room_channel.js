@@ -1,8 +1,5 @@
 import consumer from "./consumer"
 
-
-
-
 consumer.subscriptions.create("RoomChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
@@ -14,7 +11,8 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
-    document.getElementById('submitted_chat_content').
-    insertAdjacentHTML('beforeend', date['chat'])
+    // データを受け取った時に以下を発動する
+    document.getElementById('chat_index').
+    insertAdjacentHTML('beforeend', data['chat'])
   }
 });

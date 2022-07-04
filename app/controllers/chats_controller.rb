@@ -6,7 +6,7 @@ class ChatsController < ApplicationController
     @chat.chatroom_id = params[:chatroom_id]
     @chat.save!
     #下記でエラーが発生
-    ActionCable.server.broadcast 'room_channel', chat: @chat.template
+    ActionCable.server.broadcast 'room_channel', { chat: @chat.template }
   end
 
   def destroy

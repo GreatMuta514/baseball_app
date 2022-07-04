@@ -5,7 +5,7 @@ class Chat < ApplicationRecord
   validates :body, presence: true
 
   def template
-    ApplicationController.renderer.render partial: 'chatrooms/chat', locales: { chat: self }
+    ApplicationController.renderer.render partial: 'chatrooms/chat', locals: { chat: self }
   end
 
 end
