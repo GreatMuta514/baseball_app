@@ -27,13 +27,14 @@ document.addEventListener('turbolinks:load', () => {
     const submittingChatContent = document.getElementById('submitting_chat_content');
     const chatButton = document.getElementById('chat_button');
 
-    //chatroom開いた時に実行
+    //chatroom開いた時に画面一番下にスクロール
     window.scrollToBottom = ()=>{
       window.scroll(0,document.documentElement.scrollHeight)
     };
     window.scrollToBottom();
    
 
+    //チャットのフォームのボタンに関する処理
     const button_activation = () => {
       if (submittingChatContent.value === ''){
         chatButton.classList.add('disabled')
@@ -41,14 +42,14 @@ document.addEventListener('turbolinks:load', () => {
         chatButton.classList.remove('disabled')
       }
     };
-    //チャット入力欄に値が入った時
+
     submittingChatContent.addEventListener('input', () => {
       button_activation()
     });
 
     chatButton.addEventListener('click', () => {
-      chatButton.classList.add('disabled')
+      chatButton.classList.add('disabled');
     });
-
+    
 });
 
