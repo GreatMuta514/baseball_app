@@ -5,8 +5,10 @@ class ChatroomsController < ApplicationController
   
   def show
     @chatroom = Chatroom.find(params[:id])
+    
     @chats = Chat.where(chatroom: @chatroom).includes(:user)
-    @chat = Chat.new
+    # @chat = Chat.new
+    
     # @mychats = @chats.where(user: current_user).includes(:user)
     # @otherchats = @chats.where.not(user: current_user).includes(:user)
     # @chats = @mychats.or(@otherchats).order(:created_at)

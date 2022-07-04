@@ -1,7 +1,9 @@
 <h1><%= @chatroom.name %></h1>
-  <%= render partial: 'chatrooms/chat', collection: @chats %>
+  <div id="chat_index">
+    <%= render partial: 'chat', collection: @chats %>
+  </div>
 <br>
 <%= form_with url: chatroom_chats_url(@chatroom), local: false do |form| %>
-  <%= form.text_field :body, id: 'chat_content' %>
+  <%= form.text_field :body, id: 'submitting_chat_content' %>
   <%= form.submit "送信" %>
 <% end %>

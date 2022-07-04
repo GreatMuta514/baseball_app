@@ -1,11 +1,13 @@
-<% if chat.user == current_user %>
-  <div class="mychat">
+<div class='submitted_chat_content', id:'submitted_chat_content'>
+  <% if chat.user == current_user %>
+    <div class="mychat">
+      <%= chat.user.nickname %>
+      <%= chat.body %>
+      <br>
+    </div>
+  <% else %>
     <%= chat.user.nickname %>
     <%= chat.body %>
     <br>
-  </div>
-<% else %>
-    <%= chat.user.nickname %>
-    <%= chat.body %>
-    <br>
-<% end %>
+  <% end %>
+</div>
