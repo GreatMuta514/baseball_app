@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_30_015007) do
+ActiveRecord::Schema.define(version: 2022_07_08_014006) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name", limit: 30, null: false
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(version: 2022_06_30_015007) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_chats_on_chatroom_id"
     t.index ["user_id"], name: "index_chats_on_user_id"
+  end
+
+  create_table "highschool_games", force: :cascade do |t|
+    t.string "first_side_team"
+    t.string "third_side_team"
+    t.string "first_side_team_prefecture"
+    t.string "third_side_team_prefecture"
+    t.integer "first_side_score"
+    t.integer "third_side_score"
+    t.integer "state"
+    t.integer "result"
+    t.datetime "start_at"
+    t.datetime "finish_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
