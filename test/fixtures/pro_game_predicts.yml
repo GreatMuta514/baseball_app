@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_base_side_score: 1
+  third_side_score: 1
+  user: one
+  result: 1
+  how_to_win: 1
+  flow_of_game: 1
+
+two:
+  first_base_side_score: 1
+  third_side_score: 1
+  user: two
+  result: 1
+  how_to_win: 1
+  flow_of_game: 1
