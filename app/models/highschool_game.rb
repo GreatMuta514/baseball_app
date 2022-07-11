@@ -1,0 +1,2 @@
+class HighschoolGame < ApplicationRecord
+end

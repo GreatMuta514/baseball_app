@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+# selenium
+gem 'selenium-webdriver'
 # jQuery
 gem 'jquery-rails'
 # 日本語化機能
@@ -65,7 +67,10 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver', '>= 4.0.0.rc1'
+  
+  #以下のseleniumはデフォルトで入っていたけど、昨日として使うので一旦消した
+  # gem 'selenium-webdriver', '>= 4.0.0.rc1'
+
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
