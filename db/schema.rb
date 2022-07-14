@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_13_021230) do
+ActiveRecord::Schema.define(version: 2022_07_14_093259) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name", limit: 30, null: false
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2022_07_13_021230) do
     t.integer "flow_of_game"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "pro_game_id"
+    t.index ["pro_game_id"], name: "index_pro_game_predicts_on_pro_game_id"
     t.index ["user_id"], name: "index_pro_game_predicts_on_user_id"
   end
 
@@ -91,5 +93,6 @@ ActiveRecord::Schema.define(version: 2022_07_13_021230) do
 
   add_foreign_key "chats", "chatrooms"
   add_foreign_key "chats", "users"
+  add_foreign_key "pro_game_predicts", "pro_games"
   add_foreign_key "pro_game_predicts", "users"
 end
