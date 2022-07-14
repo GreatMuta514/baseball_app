@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field: MyString
+  first_base_side_pro_team: MyString
+  third_base_side_pro_team: MyString
+  first_base_side_score: 1
+  third_base_side_score: 1
+  first_base_side_pitcher: MyString
+  third_base_side_pitcher: MyString
+  result: 1
+  state: 1
+  start_at: 2022-07-13 11:12:30
+  finish_at: MyString
+  datetaime: MyString
+
+two:
+  field: MyString
+  first_base_side_pro_team: MyString
+  third_base_side_pro_team: MyString
+  first_base_side_score: 1
+  third_base_side_score: 1
+  first_base_side_pitcher: MyString
+  third_base_side_pitcher: MyString
+  result: 1
+  state: 1
+  start_at: 2022-07-13 11:12:30
+  finish_at: MyString
+  datetaime: MyString
