@@ -3,6 +3,7 @@ class User < ApplicationRecord
   mount_uploader :profile, ProfileUploader
 
   has_many :chats, dependent: :destroy
+  has_many :pro_game_predicts, dependent: :destroy
   
   # バリデーション
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }

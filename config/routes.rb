@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
-
-
-  resources :pro_game_predicts, only: [:new, :create]
+  
+  resources :pro_games, only: [:create] do
+    resources :pro_game_predicts, only: [:new, :create]
+  end
 
   #予想
   get 'game_predicts' => 'game_predicts#index'

@@ -1,0 +1,13 @@
+<%= @today_pro_game.first_base_side_pro_team %>
+<%= @today_pro_game.third_base_side_pro_team %>
+<%= @today_pro_game.start_at %>
+<%= @today_pro_game.first_base_side_pitcher %>
+<%= @today_pro_game.third_base_side_pitcher %>
+
+<%= form_with model: @pro_game_predict, url: pro_game_pro_game_predicts_url do |f| %>
+  <%= f.label :first_base_side_score %>
+  <%= f.number_field :first_base_side_score, name: 'first_base_side_score' , min: 0, max: 30 %>
+  <%= f.label :third_base_side_score %>
+  <%= f.number_field :third_base_side_score, name: 'third_base_side_score' , min: 0, max: 30 %>
+  <%= f.submit "送信する" %>
+<% end %>
