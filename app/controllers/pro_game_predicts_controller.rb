@@ -8,7 +8,6 @@ class ProGamePredictsController < ApplicationController
     @pro_game_predict = current_user.pro_game_predicts.new(predict_params)
     @pro_game_predict.pro_game_id = params[:pro_game_id]
     @pro_game_predict.input_win_or_lose
-    @pro_game_predict.input_how_to_win
 
     if @pro_game_predict.save
       redirect_to request.referer, success: "予想を投稿しました。"

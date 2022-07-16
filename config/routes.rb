@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   
   resources :pro_games, only: [:create] do
     resources :pro_game_predicts, only: [:new, :create]
+      collection do
+        post 'reflect'
+      end
   end
 
   #予想

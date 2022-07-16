@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_14_093259) do
+ActiveRecord::Schema.define(version: 2022_07_16_025450) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name", limit: 30, null: false
@@ -48,12 +48,11 @@ ActiveRecord::Schema.define(version: 2022_07_14_093259) do
     t.integer "first_base_side_score"
     t.integer "third_base_side_score"
     t.integer "user_id", null: false
-    t.integer "result"
-    t.integer "how_to_win"
-    t.integer "flow_of_game"
+    t.integer "win_or_lose"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "pro_game_id"
+    t.integer "point"
     t.index ["pro_game_id"], name: "index_pro_game_predicts_on_pro_game_id"
     t.index ["user_id"], name: "index_pro_game_predicts_on_user_id"
   end
@@ -67,7 +66,6 @@ ActiveRecord::Schema.define(version: 2022_07_14_093259) do
     t.string "first_base_side_pitcher"
     t.string "third_base_side_pitcher"
     t.integer "result"
-    t.integer "state"
     t.datetime "start_at", null: false
     t.datetime "finish_at"
     t.datetime "created_at", precision: 6, null: false
