@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+# cronを使いやすくする
+gem 'whenever'
+# nokogiri
 gem 'open-uri'
 # selenium
 gem 'selenium-webdriver'
