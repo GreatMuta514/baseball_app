@@ -7,7 +7,7 @@ every 1.day, :at => '4:30 am' do
   rake "pro_game:include_today_game"
 end
 
-every 1.day, :at => '4:35 pm' do
+every 1.day, :at => '4:40 am' do
   rake "pro_game:include_yesterday_result"
 end
 
