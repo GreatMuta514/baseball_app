@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   
-  
+  #予想機能
   resources :pro_games, only: [:create] do
     resources :pro_game_predicts, only: [:new, :create]
-      collection do
-        post 'reflect'
-      end
+    resources :pro_game_predict_comments, only: [:create, :destroy]
   end
 
-  #予想
+  #予想閲覧機能
   get 'game_predicts' => 'game_predicts#index'
   get 'game_predicts/confirmation' => 'game_predicts#confirmation'
   get 'game_predicts/results' => 'game_predicts#results'

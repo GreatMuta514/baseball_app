@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_16_025450) do
+ActiveRecord::Schema.define(version: 2022_07_18_080423) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name", limit: 30, null: false
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(version: 2022_07_16_025450) do
     t.datetime "finish_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pro_game_predict_comments", force: :cascade do |t|
+    t.string "body", limit: 140, null: false
+    t.integer "user_id", null: false
+    t.integer "pro_game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "parent_id"
+    t.index ["parent_id"], name: "index_pro_game_predict_comments_on_parent_id"
+    t.index ["pro_game_id"], name: "index_pro_game_predict_comments_on_pro_game_id"
+    t.index ["user_id"], name: "index_pro_game_predict_comments_on_user_id"
   end
 
   create_table "pro_game_predicts", force: :cascade do |t|
@@ -91,6 +103,9 @@ ActiveRecord::Schema.define(version: 2022_07_16_025450) do
 
   add_foreign_key "chats", "chatrooms"
   add_foreign_key "chats", "users"
+  add_foreign_key "pro_game_predict_comments", "pro_game_predict_comments", column: "parent_id"
+  add_foreign_key "pro_game_predict_comments", "pro_games"
+  add_foreign_key "pro_game_predict_comments", "users"
   add_foreign_key "pro_game_predicts", "pro_games"
   add_foreign_key "pro_game_predicts", "users"
 end
