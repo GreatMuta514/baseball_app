@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :chats, dependent: :destroy
   has_many :pro_game_predicts, dependent: :destroy
+  has_many :pro_game_predict_comments, dependent: :destroy
   
   # バリデーション
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
