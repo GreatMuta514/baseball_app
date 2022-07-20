@@ -5,7 +5,8 @@ class ProGamePredictsController < ApplicationController
     @today_pro_game = ProGame.find(params[:pro_game_id])
     
     @pro_game_predict_comments = @today_pro_game.pro_game_predict_comments.order(created_at: :desc).includes(:user, :pro_game)
-    
+
+    @current_user_predict = current_user.pro_game_predicts.find_by(pro_game_id:params[:pro_game_id])
   end
 
   def create

@@ -1,11 +1,5 @@
-<%= @today_pro_game.first_base_side_pro_team %>
-<%= @today_pro_game.third_base_side_pro_team %>
-<%= @today_pro_game.start_at %>
-<%= @today_pro_game.first_base_side_pitcher %>
-<%= @today_pro_game.third_base_side_pitcher %>
-
+<%= render 'today_pro_game', today_pro_game: @today_pro_game %>
 <br>
-
 <%= form_with model: @pro_game_predict, url: pro_game_pro_game_predicts_url do |f| %>
   <%= f.label :first_base_side_score %>
   <%= f.number_field :first_base_side_score, name: 'first_base_side_score' , min: 0, max: 30 %>
@@ -13,17 +7,13 @@
   <%= f.number_field :third_base_side_score, name: 'third_base_side_score' , min: 0, max: 30 %>
   <%= f.submit "送信する" %>
 <% end %>
-
 <br>
-
-<%= form_with model: @pro_game_predict_comment, url: pro_game_pro_game_predict_comments_url do |f| %>
+<%= form_with model: @pro_game_predict_comment, url: pro_game_pro_game_predict_comments_url, local: false do |f| %>
   <%= f.label :body %>
-  <%= f.text_field :body %>
+  <%= f.text_field :body, id:'pro_game_predict_comment_value' %>
   <%= f.submit "送信する" %>
 <% end %>
-
 <br>
-
-<% @pro_game_predict_comments.each do |comment| %>
-  <%= comment.body %>
-<% end %>
+<div id="pro_game_predict_comments">
+  <%= render partial:'pro_game_predicts/pro_game_predict_comment', collection: @pro_game_predict_comments %>
+</div>
