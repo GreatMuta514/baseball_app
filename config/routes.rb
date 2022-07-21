@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  namespace :admin do
+    resources :users, except: [:new, :create] 
+  end
+
+
   #予想機能
   resources :pro_games, only: [:create] do
     resources :pro_game_predicts, only: [:new, :create]

@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+    <th><%= User.human_attribute_name(:id) %></th>
+    <th><%= User.human_attribute_name(:email) %></th>
+    <th><%= User.human_attribute_name(:created_at) %></th>
+    <th><%= User.human_attribute_name(:updated_at) %></th>
+    <th><%= User.human_attribute_name(:nickname) %></th>
+    <th><%= User.human_attribute_name(:profile) %></th>
+    <th><%= User.human_attribute_name(:role) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>

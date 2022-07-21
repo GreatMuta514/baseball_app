@@ -1,0 +1,13 @@
+<td><%= @user.id %></td>
+<td><%= @user.email %></td>
+<td><%= @user.created_at %></td>
+<td><%= @user.updated_at %></td>
+<td><%= @user.nickname %></td>
+<td><%= @user.profile %></td>
+<td><%= @user.rank %></td>
+<td><%= @user.role %></td>
+
+
+<td><%= link_to '編集', edit_admin_user_path(@user) %></td>
+<td><%= link_to '削除', admin_user_path(@user), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+<td><%= link_to '戻る', admin_users_path %></td>
