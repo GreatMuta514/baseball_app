@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  resources :contacts, only: [:new, :create]
+  get 'contacts/done', to: 'contacts#done'
+
   namespace :admin do
     resources :users, except: [:new, :create] 
   end

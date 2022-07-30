@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+# githubにメールアドレスやパスワードをプッシュしないようにしてくれる。
+gem "dotenv-rails"
 # cronを使いやすくする
 gem 'whenever'
 # nokogiri
