@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   
+  #問い合わせ機能
   resources :contacts, only: [:new, :create]
   get 'contacts/done', to: 'contacts#done'
 
+  #管理者機能
   namespace :admin do
     resources :users, except: [:new, :create] 
   end
-
 
   #予想機能
   resources :pro_games, only: [:create] do
