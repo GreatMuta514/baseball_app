@@ -10,14 +10,18 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
 // bootstrapの設定
 import "bootstrap";
-import "../stylesheets/application.scss";
+import "../src/application.scss.erb";
+// font-awesomeの設定
+import '@fortawesome/fontawesome-free/js/all';
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+const images = require.context('../images', true)
+const imagePath = (name) => images(name, true)
 
 // $(function() {
 //   function readURL(input) {

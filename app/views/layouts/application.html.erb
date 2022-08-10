@@ -6,14 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%# webpackerで管理したjsファイルを適用 %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <%# bootstrapの設定 %>
+    <%# webpackerで管理したscssファイルを適用 %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-info">
-    <%= render 'shared/header' %>
+  <body>
     <%= render 'shared/flash_message' %>
     <%= yield %>
   </body>
