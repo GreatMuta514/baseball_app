@@ -103,6 +103,8 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (2.0.3)
     ffi (1.15.5)
+    font-awesome-sass (6.1.2)
+      sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -320,6 +322,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   dotenv-rails
+  font-awesome-sass
   jquery-rails
   letter_opener_web
   listen (~> 3.3)
