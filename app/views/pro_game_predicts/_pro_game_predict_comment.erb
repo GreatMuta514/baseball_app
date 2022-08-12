@@ -1,3 +1,10 @@
 <% if @current_user_predict %>
-  <div id="pro_game_predicts_comment"><%= pro_game_predict_comment.body %></div>
+
+  <div id="pro_game_predicts_comment" class="pro_game_predict_comment mb-3">
+    <%= image_tag pro_game_predict_comment.user.profile.url, class:'ms-0', style:'height: 55px; width: 55px;' %>
+    <%= pro_game_predict_comment.user.nickname %>
+    <br>
+    <div class="ps-5"><%= pro_game_predict_comment.body %></div>
+  </div>
+
 <% end %>

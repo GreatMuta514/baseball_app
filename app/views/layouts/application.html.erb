@@ -12,10 +12,10 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="header">
+  <body style="margin-top:56px;">
+    
       <%= render 'shared/header' %>
-    </div>
+    
     <%= render 'shared/flash_message' %>
     <%= yield %>
   </body>

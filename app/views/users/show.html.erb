@@ -1,29 +1,19 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container text-center">
 <p>
-  <strong>Profile:</strong>
   <%= image_tag @user.profile.url %>
 </p>
 
 <p>
-  <strong>Nickname:</strong>
+  <strong>ニックネーム:</strong>
   <%= @user.nickname %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>メールアドレス:</strong>
   <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Password Confirmation:</strong>
-  <%= @user.password_confirmation %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>

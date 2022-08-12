@@ -1,5 +1,26 @@
-<%= today_pro_game.first_base_side_pro_team %>
-<%= today_pro_game.third_base_side_pro_team %>
-<%= today_pro_game.start_at %>
-<%= today_pro_game.first_base_side_pitcher %>
-<%= today_pro_game.third_base_side_pitcher %>
+<%= form_with model: @pro_game_predict, url: pro_game_pro_game_predicts_url, class: 'border-3' do |f| %>
+<div class="row one-game m-3 border border-info">
+  <div class="col-3 mt-3">
+    <h4 class="fw-bold mt-3"><%= today_pro_game.first_base_side_pro_team %></h4>
+    <%= today_pro_game.first_base_side_pitcher %>
+  </div>
+  <div class="col-2 mt-3">
+    <%= f.label :スコア予想, class: 'form-label' %>
+    <%= f.number_field :first_base_side_score, name: 'first_base_side_score' , min: 0, max: 33, style: 'width:30%;', class: 'form-control mx-auto' %>
+  </div>
+  <div class="col-2 mt-4">
+    <%= today_pro_game.start_at %>
+  </div>
+  <div class="col-2 mt-3">
+    <%= f.label :スコア予想, class: 'form-label' %>
+    <%= f.number_field :third_base_side_score, name: 'third_base_side_score' , min: 0, max: 33, style: 'width:30%;', class: 'form-control mx-auto' %>
+  </div>
+  <div class="col-3 mt-3">
+    <h4 class="fw-bold mt-3"><%= today_pro_game.third_base_side_pro_team %></h4>
+    <%= today_pro_game.third_base_side_pitcher %>
+  </div>
+  <div>
+    <%= f.submit "投票する", class: 'btn btn-primary mb-3' %>
+  </div>
+</div>
+<% end %>

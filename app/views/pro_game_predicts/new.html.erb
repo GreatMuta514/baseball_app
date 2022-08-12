@@ -1,19 +1,23 @@
-<%= render 'today_pro_game', today_pro_game: @today_pro_game %>
-<br>
-<%= form_with model: @pro_game_predict, url: pro_game_pro_game_predicts_url do |f| %>
-  <%= f.label :first_base_side_score %>
-  <%= f.number_field :first_base_side_score, name: 'first_base_side_score' , min: 0, max: 30 %>
-  <%= f.label :third_base_side_score %>
-  <%= f.number_field :third_base_side_score, name: 'third_base_side_score' , min: 0, max: 30 %>
-  <%= f.submit "送信する" %>
-<% end %>
-<br>
-<%= form_with model: @pro_game_predict_comment, url: pro_game_pro_game_predict_comments_url, local: false do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body, id:'pro_game_predict_comment_value' %>
-  <%= f.submit "送信する" %>
-<% end %>
-<br>
-<div id="pro_game_predict_comments">
-  <%= render partial:'pro_game_predicts/pro_game_predict_comment', collection: @pro_game_predict_comments %>
+<div class="container">
+  
+  <section class="text-center">
+    <h2 class="pt-3">勝敗予想</h2>
+    <%= render 'today_pro_game', today_pro_game: @today_pro_game %>
+  </section>
+
+  <%# <section>
+    <h2 class="m-3">予想データ</h2>
+    <br>
+    <br>
+  </section> %>
+  
+  <section>
+  <h4>予想コメント</h4>
+  <%= form_with model: @pro_game_predict_comment, url: pro_game_pro_game_predict_comments_url, local: false, class:'mt-3' do |f| %>
+      <%= f.text_area :body, id:'pro_game_predict_comment_value', class: 'form-control'%>
+      <%= f.submit "送信する", class: 'btn btn-primary my-3' %>
+  <% end %>
+    <%= render partial: 'pro_game_predicts/pro_game_predict_comment', collection: @pro_game_predict_comments %>
+  </section>
+
 </div>
