@@ -15,3 +15,6 @@ ja:
   chatrooms:
     index:
       title: チャットルーム
+  time:
+    formats:
+      default: '%m月%d日 %H:%M'

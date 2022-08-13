@@ -1,6 +1,19 @@
 # require 'open-uri'
 # require 'nokogiri'
 
+namespace :chatroom do
+
+  desc '今日のプロ野球の試合のチャットルームを作成'
+  task create: :environment do
+    today_pro_games = ProGame.where(start_at: Time.current.all_day)
+
+    today_pro_games.each do |pro_game|
+      Chatroom.create!(pro_game: pro_game)
+    end
+  end
+
+end
+
 namespace :pro_game do
 
   desc '今日のプロ野球の試合データを取り入れる'
@@ -38,7 +51,7 @@ namespace :pro_game do
     url = "https://baseball.yahoo.co.jp/npb/schedule/?date=#{yesterday_string}" #プロ野球機能の試合結果のhtml、readメソッドはstring型にして返す
     html = URI.open(url).read #サイトのhtmlを取得
     doc = Nokogiri::HTML.parse(html) #取得したhtmlをアプリケーションで扱える形に変換
-    yesterday_games = ProGame.where(start_at: (DateTime.yesterday.beginning_of_day)..(DateTime.yesterday.end_of_day)).to_a #DBに既にある昨日の試合のデータを抽出
+    yesterday_games = ProGame.where(start_at: Time.current.yesterday.all_day).to_a #DBに既にある昨日の試合のデータを抽出
     yesterday_results = doc.css('.bb-score__item').to_a #サイトから昨日の試合データを抽出
     #=======================================================================================================================
 
@@ -75,7 +88,7 @@ namespace :pro_game do
 
   desc '昨日のプロ野球の試合予想の結果を反映'
   task reflect_predict_result: :environment do
-    @yesterday_pro_games = ProGame.where(start_at: (Time.current.yesterday.beginning_of_day)..(Time.current.yesterday.end_of_day))
+    @yesterday_pro_games = ProGame.where(start_at: Time.current.yesterday.all_day)
 
     @yesterday_pro_games.each do |yesterday_pro_game|
       #試合中止か引き分けならばスキップ
@@ -95,7 +108,6 @@ namespace :pro_game do
       end
 
       pro_game_predict.save!
-
       end
     end
   end

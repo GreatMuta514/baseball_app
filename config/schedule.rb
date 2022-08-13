@@ -17,10 +17,14 @@ every 1.day, :at => '11:00 am' do
   rake "pro_game:include_today_game", environment: 'development'
 end
 
-every 1.day, :at => '11:01 am' do
+every 1.day, :at => '11:02 am' do
   rake "pro_game:include_yesterday_result", environment: 'development'
 end
 
-every 1.day, :at => '11:02 am' do
+every 1.day, :at => '11:04 am' do
   rake "pro_game:reflect_predict_result", environment: 'development'
+end
+
+every 1.day, :at => '11:06 am' do
+  rake "chatroom:create", environment: 'development'
 end

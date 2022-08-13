@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_13_022910) do
+ActiveRecord::Schema.define(version: 2022_08_13_024000) do
 
   create_table "chatrooms", force: :cascade do |t|
-    t.string "name", limit: 30, null: false
     t.string "thumbnail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

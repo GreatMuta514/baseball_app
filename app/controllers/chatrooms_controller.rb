@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = Chatroom.all
+    @chatrooms = Chatroom.where(created_at: Time.current.all_day).includes(:pro_game)
   end
   
   def show
