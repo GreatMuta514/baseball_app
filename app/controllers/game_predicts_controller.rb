@@ -7,6 +7,7 @@ class GamePredictsController < ApplicationController
   end
 
   def results
+    @yesterday_pro_game_predicts = current_user.pro_game_predicts.where(created_at: Time.current.yesterday.all_day).includes(:pro_game)
   end
 
 end

@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="mb-5">昨日の予想結果</h1>
+  
+  <% @yesterday_pro_game_predicts.each do |yesterday_pro_game_predict| %>
+    <div class="one-game-predict-result row border border-info rounded p-2 mb-3 ">
+      <div class="row">
+        <h4 class="col fw-bold"><%= yesterday_pro_game_predict.pro_game.first_base_side_pro_team %></h4>
+        <div class="col">
+          <%= yesterday_pro_game_predict.pro_game.first_base_side_score %>-<%= yesterday_pro_game_predict.pro_game.third_base_side_score %><p class ="col">あなたの予想:<%= yesterday_pro_game_predict.first_base_side_score %>-<%= yesterday_pro_game_predict.third_base_side_score %></p>
+        </div>
+        <h4 class="col fw-bold"><%= yesterday_pro_game_predict.pro_game.third_base_side_pro_team %></h4>
+        <div class="col">
+          <div class="text-info">
+            <% if yesterday_pro_game_predict.point == 100 %>
+              <i class="fa-solid fa-bolt" style='width: 40px; height: 40px'></i>
+            <% elsif 100 > yesterday_pro_game_predict.point && yesterday_pro_game_predict.point >= 61 %>
+              <i class="fa-solid fa-face-grin-stars" style='width: 40px; height: 40px'></i>
+            <% elsif 61 > yesterday_pro_game_predict.point && yesterday_pro_game_predict.point >= 41 %>
+              <i class="fa-solid fa-face-frown" style='width: #FFD700; 40px; height: 40px'></i>
+            <% elsif 41 > yesterday_pro_game_predict.point && yesterday_pro_game_predict.point >= 11 %>
+              <i class="fa-solid fa-face-grin-beam-sweat" style='width: #FFD700; 40px; height: 40px'></i>
+            <% else %>
+              <i class="fa-solid fa-poo" style='width: #FFD700; 40px; height: 40px'></i>
+            <% end %>
+          </div>
+          <div class="fw-bold"><%= yesterday_pro_game_predict.point %>pt</div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  
+</div>
