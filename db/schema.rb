@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_27_021055) do
+ActiveRecord::Schema.define(version: 2022_08_13_022910) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "name", limit: 30, null: false
     t.string "thumbnail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "pro_game_id", null: false
+    t.index ["pro_game_id"], name: "index_chatrooms_on_pro_game_id"
   end
 
   create_table "chats", force: :cascade do |t|
@@ -110,6 +112,7 @@ ActiveRecord::Schema.define(version: 2022_07_27_021055) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
+  add_foreign_key "chatrooms", "pro_games"
   add_foreign_key "chats", "chatrooms"
   add_foreign_key "chats", "users"
   add_foreign_key "pro_game_predict_comments", "pro_game_predict_comments", column: "parent_id"

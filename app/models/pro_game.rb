@@ -1,5 +1,6 @@
 class ProGame < ApplicationRecord
 
+  has_one :chatroom, dependent: :destroy
   has_many :pro_game_predicts, dependent: :destroy
   has_many :pro_game_predict_comments, dependent: :destroy
 

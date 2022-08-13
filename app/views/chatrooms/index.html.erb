@@ -1,18 +1,16 @@
-<h1><%= t".title" %></h1>
+<div class="container">
+<h1 class="mb-5"><%= t".title" %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= Chatroom.human_attribute_name(:name) %></th>
-    </tr>
-  </thead>
+<table class="table table-borderless">
 
   <tbody>
     <% @chatrooms.each do |chatroom| %>
-      <tr>
+      <tr class="d-block mb-5">
         <td><%= chatroom.name %></td>
-        <td><%= link_to "入場", chatroom_path(chatroom) %></td>
+        <td><%= link_to "入場", chatroom_path(chatroom), class:'btn btn-primary' %></td>
       </tr>
     <% end %>
   </tbody>
+
 </table>
+</div>
