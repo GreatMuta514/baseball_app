@@ -17,4 +17,16 @@ class UserSessionsController < ApplicationController
     logout
     redirect_to(:users, success: 'Logged successful')
   end
+
+  def guest_login
+    @guest_user = User.create(
+      nickname: 'ゲスト',
+      email: SecureRandom.alphanumeric(10) + "@email.com",
+      password: 'password',
+      password_confirmation: 'password'
+      )
+    auto_login(@guest_user)
+    redirect_to root_path, success: 'ゲストとしてログインしました'
+  end
+
 end

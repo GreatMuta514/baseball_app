@@ -18,7 +18,8 @@ document.addEventListener('turbolinks:load', () => {
   
     received(data) {
       // データを受け取った時に以下を発動する
-      document.getElementById('chat_container').insertAdjacentHTML('beforeend', data['chat'])
+      document.getElementById('chat_container').insertAdjacentHTML('beforeend', data['chat']);
+      scrollToBottom();
     }
   });
     

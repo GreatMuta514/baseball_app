@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+
   #問い合わせ機能
   resources :contacts, only: [:new, :create]
   get 'contacts/done', to: 'contacts#done'
@@ -35,6 +36,8 @@ Rails.application.routes.draw do
   get 'login' => 'user_sessions#new', :as => :login
   post 'login' => "user_sessions#create"
   post 'logout' => 'user_sessions#destroy', :as => :logout
+  #ゲストログイン機能
+  post 'guest_login', to: 'user_sessions#guest_login'
   
   #ユーザー
   resources :users
