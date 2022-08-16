@@ -1,7 +1,7 @@
 <%= form_with(model: user) do |form| %>
   <%= render 'shared/error_message', object: user %>
 
-  <%= image_tag user.profile.url, id: 'profile_preview', class: 'mb-3 profile-image d-block mx-auto', style: 'height:150px; width:150px;' %>
+  <%= image_tag user.profile.url, id: 'profile_preview', class: 'rounded-circle mb-3 profile-image d-block mx-auto', style: 'width:150px; height:150px; border-radius:50%; object-fit: cover;' %>
   <div class="field">
     <%= form.label :profile, class: 'form-label' %>
     <%= form.file_field :profile, id: 'profile', class: 'form-control' %>

@@ -26,7 +26,7 @@ class UserSessionsController < ApplicationController
       password_confirmation: 'password'
       )
     auto_login(@guest_user)
-    redirect_to root_path, success: 'ゲストとしてログインしました'
+    redirect_back_or_to(:chatrooms, success: 'Login successful')
   end
 
 end

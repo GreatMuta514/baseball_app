@@ -27,9 +27,6 @@ class ProfileUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
 
-  process resize_to_fit: [50, 50]
-  
-
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_allowlist
