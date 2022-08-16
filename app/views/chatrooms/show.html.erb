@@ -1,9 +1,12 @@
-<h1><%= @chatroom.id %></h1>
-  <div id="chat_container">
-    <%= render partial: 'chat', collection: @chats %>
+<div class="container">
+  <h1><%= @chatroom.pro_game.first_base_side_pro_team %> - <%= @chatroom.pro_game.third_base_side_pro_team %></h1>
+    <div id="chat_container">
+      <%= render partial: 'chat', collection: @chats, class:'float-end' %>
+    </div>
+  <div class="float-end">
+  <%= form_with url: chatroom_chats_url(@chatroom), local: false do |form| %>
+    <%= form.text_field :body, id: 'submitting_chat_content' %>
+    <%= form.submit "送信", class: 'btn btn-primary disabled', id: 'chat_button' %>
+  <% end %>
   </div>
-<br>
-<%= form_with url: chatroom_chats_url(@chatroom), local: false do |form| %>
-  <%= form.text_field :body, id: 'submitting_chat_content' %>
-  <%= form.submit "送信", class: 'btn btn-primary disabled', id: 'chat_button' %>
-<% end %>
+</div>

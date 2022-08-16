@@ -1,17 +1,12 @@
 <p id="notice"><%= notice %></p>
 <div class="container text-center">
 <p>
-  <%= image_tag @user.profile.url %>
+  <%= image_tag @user.profile.url, style: 'height:150p; width:150px' %>
 </p>
 
 <p>
   <strong>ニックネーム:</strong>
   <%= @user.nickname %>
-</p>
-
-<p>
-  <strong>メールアドレス:</strong>
-  <%= @user.email %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

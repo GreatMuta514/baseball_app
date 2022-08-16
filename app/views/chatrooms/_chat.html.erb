@@ -1,13 +1,27 @@
-<div class='submitted_chat_content', id:'submitted_chat_content'>
-  <% if chat.user == current_user %>
-    <div class="mychat">
-      <%= chat.user.nickname %>
-      <%= chat.body %>
-      <br>
+<% if chat.user == current_user %>
+  <div class='submitted_chat_content', id:'submitted_chat_content'>
+    <div class="d-flex">
+      <div class="mychat ms-auto">
+        <div class="px-3 py-2 border rounded bg-light">
+          <%= chat.body %>
+        </div>
+        <br>
+      </div>
     </div>
-  <% else %>
-    <%= chat.user.nickname %>
-    <%= chat.body %>
-    <br>
-  <% end %>
-</div>
+  </div>
+<% else %>
+  <div class="d-flex">
+    <div class="">
+      <%= image_tag 'profile.jpg', style: 'width:55px; heght:55px;' %>
+    </div>
+
+    <div class="">
+      <div class="pt-2 fw-bold">
+        <%= chat.user.nickname %>
+      </div>
+      <div class="px-3 py-2 border rounded bg-light">
+        <%= chat.body %>
+      </div>
+    </div>
+  </div>
+<% end %>

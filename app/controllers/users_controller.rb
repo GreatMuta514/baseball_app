@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_back fallback_location: chatrooms_path if @user != current_user
+    redirect_back fallback_location: chatrooms_path, danger:'他のユーザーです' if @user != current_user
   end
 
 end
