@@ -18,6 +18,7 @@
     <%= form.text_field :email, class: 'form-control' %>
   </div>
 
+  <% unless current_user %>
   <div class="field">
     <%= form.label :password, class: 'form-label' %><br />
     <%= form.password_field :password, class: 'form-control' %>
@@ -27,6 +28,7 @@
     <%= form.label :password_confirmation, class: 'form-label' %><br />
     <%= form.password_field :password_confirmation, class: 'form-control' %>
   </div>
+  <% end %>
 
   <div class="actions my-3">
     <%= form.submit class: 'btn btn-primary d-block mx-auto' %>
