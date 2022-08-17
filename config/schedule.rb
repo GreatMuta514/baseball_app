@@ -13,18 +13,18 @@ set :job_template, "/bin/zsh -l -c ':job'"
 job_type :rake, "eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output"
 
 
-every 1.day, :at => '11:00 am' do
+every 1.day, :at => '12:08 pm' do
   rake "pro_game:include_today_game", environment: 'development'
 end
 
-every 1.day, :at => '11:02 am' do
+every 1.day, :at => '12:09 pm' do
+  rake "chatroom:create", environment: 'development'
+end
+
+every 1.day, :at => '12:10 pm' do
   rake "pro_game:include_yesterday_result", environment: 'development'
 end
 
-every 1.day, :at => '11:04 am' do
+every 1.day, :at => '12:11 pm' do
   rake "pro_game:reflect_predict_result", environment: 'development'
-end
-
-every 1.day, :at => '11:06 am' do
-  rake "chatroom:create", environment: 'development'
 end

@@ -40,7 +40,9 @@ Rails.application.routes.draw do
   post 'guest_login', to: 'user_sessions#guest_login'
   
   #ユーザー
-  resources :users
+  resources :users, except: [:index] 
+
+  #トップ
   get 'static_pages/top'
   root 'static_pages#top'
 end

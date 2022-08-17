@@ -51,7 +51,7 @@ namespace :pro_game do
     url = "https://baseball.yahoo.co.jp/npb/schedule/?date=#{yesterday_string}" #プロ野球機能の試合結果のhtml、readメソッドはstring型にして返す
     html = URI.open(url).read #サイトのhtmlを取得
     doc = Nokogiri::HTML.parse(html) #取得したhtmlをアプリケーションで扱える形に変換
-    yesterday_games = ProGame.where(start_at: Time.current.yesterday.all_day).to_a #DBに既にある昨日の試合のデータを抽出
+    yesterday_games = ProGame.where(start_at: (DateTime.yesterday.beginning_of_day)..(DateTime.yesterday.end_of_day)).to_a #DBに既にある昨日の試合のデータを抽出
     yesterday_results = doc.css('.bb-score__item').to_a #サイトから昨日の試合データを抽出
     #=======================================================================================================================
 

@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:users, success: 'Logged successful')
+    redirect_to(:root, success: 'Logout successful')
   end
 
   def guest_login

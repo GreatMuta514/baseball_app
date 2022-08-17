@@ -1,15 +1,13 @@
-
-  <div class="d-flex">
-    <div class="">
-      <%= image_tag chat.user.profile.url, style: 'width:45px; height:45px; border-radius:50%; object-fit: cover;' %>
+<div class="d-flex">
+  <div class="">
+    <%= image_tag chat.user.profile.url, style: 'width:45px; height:45px; border-radius:50%; object-fit: cover;' %>
+  </div>
+  <div class="">
+    <div class="pt-2 ps-1 fw-bold">
+      <%= chat.user.nickname %>
     </div>
-
-    <div class="">
-      <div class="pt-2 ps-1 fw-bold">
-        <%= chat.user.nickname %>
-      </div>
-      <div class="px-3 py-2 border rounded bg-light">
-        <%= chat.body %>
-      </div>
+    <div class="px-3 py-2 border rounded bg-light">
+      <%= chat.body %>
     </div>
   </div>
+</div>

@@ -6,21 +6,21 @@
   </div>
   <div class="col-2 mt-3">
     <%= f.label :スコア予想, class: 'form-label' %>
-    <%= f.number_field :first_base_side_score, name: 'first_base_side_score' , min: 0, max: 33, style: 'width:30%;', class: 'form-control mx-auto', placeholder: '0' %>
+    <%= f.number_field :first_base_side_score, name: 'first_base_side_score' , min: 0, max: 33, style: 'width:30%;', class: 'form-control mx-auto', placeholder: '0', value: 0 %>
   </div>
-  <div class="col-2 mt-4">
-    <%= today_pro_game.start_at %>
+  <div class="col-2 pt-4 mt-4">
+    <%= l today_pro_game.start_at %>
   </div>
   <div class="col-2 mt-3">
     <%= f.label :スコア予想, class: 'form-label' %>
-    <%= f.number_field :third_base_side_score, name: 'third_base_side_score' , min: 0, max: 33, style: 'width:30%;', class: 'form-control mx-auto', placeholder: '0' %>
+    <%= f.number_field :third_base_side_score, name: 'third_base_side_score' , min: 0, max: 33, style: 'width:30%;', class: 'form-control mx-auto', placeholder: '0', value: 0 %>
   </div>
   <div class="col-3 mt-3">
     <h4 class="fw-bold mt-3"><%= today_pro_game.third_base_side_pro_team %></h4>
     <%= today_pro_game.third_base_side_pitcher %>
   </div>
   <div>
-    <%= f.submit "投票する", class: 'btn btn-primary mb-3' %>
+    <%= f.submit "投票する", class: 'btn btn-primary mb-3', data: { confirm: "これで投票してもいいですか？" } %>
   </div>
 </div>
 <% end %>

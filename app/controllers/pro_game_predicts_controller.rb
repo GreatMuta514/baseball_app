@@ -1,7 +1,6 @@
 class ProGamePredictsController < ApplicationController
 
   def new
-
     @today_pro_game = ProGame.find(params[:pro_game_id])
     
     @pro_game_predict_comments = @today_pro_game.pro_game_predict_comments.order(created_at: :desc).includes(:user, :pro_game)
