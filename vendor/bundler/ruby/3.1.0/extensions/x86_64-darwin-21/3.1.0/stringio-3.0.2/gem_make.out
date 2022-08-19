@@ -1,0 +1,16 @@
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/stringio-3.0.2/ext/stringio
+/Users/greatmuta/.rbenv/versions/3.1.2/bin/ruby -I /Users/greatmuta/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20220819-12225-4tic4d.rb extconf.rb
+checking for rb_io_extract_modeenc() in ruby/io.h... yes
+creating Makefile
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/stringio-3.0.2/ext/stringio
+make DESTDIR\= clean
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/stringio-3.0.2/ext/stringio
+make DESTDIR\=
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/stringio-3.0.2/ext/stringio
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 stringio.bundle ./.gem.20220819-12225-thudkl

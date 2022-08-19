@@ -1,0 +1,13 @@
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/json-2.6.2/ext/json
+/Users/greatmuta/.rbenv/versions/3.1.2/bin/ruby -I /Users/greatmuta/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20220819-12225-bbvqwl.rb extconf.rb
+creating Makefile
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/json-2.6.2/ext/json
+make DESTDIR\= clean
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/json-2.6.2/ext/json
+make DESTDIR\=
+make: Nothing to be done for `all'.
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/json-2.6.2/ext/json
+make DESTDIR\= install

@@ -1,0 +1,15 @@
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/greatmuta/.rbenv/versions/3.1.2/bin/ruby -I /Users/greatmuta/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20220819-12225-l81b7a.rb extconf.rb
+creating Makefile
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20220819-12225-xkpz3t/skiptrace/internal

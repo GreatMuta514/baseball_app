@@ -1,0 +1,15 @@
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+/Users/greatmuta/.rbenv/versions/3.1.2/bin/ruby -I /Users/greatmuta/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20220819-12225-n7n9i8.rb extconf.rb
+creating Makefile
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/greatmuta/workspace/kojin_kaihatsu/baseball_app/vendor/bundler/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20220819-12225-ee2sah/bootsnap
