@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-#herokuデプロイ時に必要
+#herokuデプロイ時
 gem 'net-imap'
 gem 'net-pop'
 gem 'font-awesome-sass'
