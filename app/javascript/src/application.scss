@@ -1,63 +1,63 @@
-// @import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/bootstrap.scss";
 // @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 
-// // トップページ上
-// .background {
-//   background-image: url("../images/top_cover.jpg");
-//   background-size: cover;
-//   background-position: 35% 30%;
-//   background-repeat: no-repeat;
-//   background-color:rgba(255,255,255,0.8);
-//   height: 530px;
-//   padding-bottom: 70px;
-// }
+// トップページ上
+.background {
+  background-image: url("../images/top_cover.jpg");
+  background-size: cover;
+  background-position: 35% 30%;
+  background-repeat: no-repeat;
+  background-color:rgba(255,255,255,0.8);
+  height: 530px;
+  padding-bottom: 70px;
+}
 
-// .top {
+.top {
 
-// }
+}
 
-// .col {
-//   text-align: center;
-// }
-// .headline {
-//   padding: 100px 0px 75px 0px;
-// }
+.col {
+  text-align: center;
+}
+.headline {
+  padding: 100px 0px 75px 0px;
+}
 
-// // トップページ下
-// .service-overview {
+// トップページ下
+.service-overview {
 
-// }
-// .icon {
-//   display: table-cell;
-//   margin: 0 auto;
-//   color: #007bff;
-// }
+}
+.icon {
+  display: table-cell;
+  margin: 0 auto;
+  color: #007bff;
+}
 
-// // ユーザー登録ページ
-// .profile-image {
-//   text-align:center;
-// }
+// ユーザー登録ページ
+.profile-image {
+  text-align:center;
+}
 
-// // <%# 今日の試合一覧ページ %>
-// .one-game {
-//   background-color: #F5F5F5;
-//   border-radius: 10px;
-// }
+// <%# 今日の試合一覧ページ %>
+.one-game {
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
 
-// // <%# 試合予想ページ %>
-// .pro_game_predict_comment {
+// <%# 試合予想ページ %>
+.pro_game_predict_comment {
 
-// }
+}
 
-// // <%# チャットルーム一覧ページ %>
-// .chatroom {
-//   background-color: #F5F5F5;
-// }
+// <%# チャットルーム一覧ページ %>
+.chatroom {
+  background-color: #F5F5F5;
+}
 
-// // <%# チャット画面 %>
+// <%# チャット画面 %>
 
-// // <%# 予想結果確認ページ %>
-// .one-game-predict-result {
-//   background-color: #F5F5F5;
-// }
+// <%# 予想結果確認ページ %>
+.one-game-predict-result {
+  background-color: #F5F5F5;
+}
