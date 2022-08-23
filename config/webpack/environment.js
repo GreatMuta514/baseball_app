@@ -1,5 +1,5 @@
-const { environment } = require('@rails/webpacker')
-const erb = require('./loaders/erb')
+const { environment } = require('@rails/webpacker');
+const erb = require('./loaders/erb');
 
 // jquery導入時に下記を記述した
 const webpack = require('webpack')
@@ -8,14 +8,14 @@ environment.plugins.prepend('Provide',
     $: 'jquery/src/jquery',
     jQuery: 'jquery/src/jquery'
   })
-)
+);
 // ここまで
 
 environment.plugins.append('Provide', new webpack.ProvidePlugin({
   $: 'jquery/src/jquery',
   jQuery: 'jquery/src/jquery',
   Popper: ['popper.js', 'default']
-}))
+}));
 
-environment.loaders.prepend('erb', erb)
-module.exports = environment
+environment.loaders.prepend('erb', erb);
+module.exports = environment;
