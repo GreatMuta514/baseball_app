@@ -12,6 +12,7 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "rails-erb-loader": "^5.5.2",
+    "sass": "^1.54.5",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
