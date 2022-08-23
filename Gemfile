@@ -6,7 +6,7 @@ ruby '3.1.2'
 #herokuデプロイ時に必要
 gem 'net-imap'
 gem 'net-pop'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.0'
 # githubにメールアドレスやパスワードをプッシュしないようにしてくれる。
 gem "dotenv-rails"
 # cronを使いやすくする
