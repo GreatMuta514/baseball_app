@@ -12,7 +12,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 // bootstrapの設定
 import "bootstrap";
-import "../src/application.scss";
+import "../../src/application.scss";
 // font-awesomeの設定
 import '@fortawesome/fontawesome-free/js/all';
 
