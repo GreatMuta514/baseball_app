@@ -6,7 +6,7 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(sass|css|scss)$/,
         use: [
           // [style-loader](/loaders/style-loader)
           { loader: 'style-loader' },
