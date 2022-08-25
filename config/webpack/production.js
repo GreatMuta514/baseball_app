@@ -17,8 +17,6 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
               modules: true
             }
           },
-          // postcss-loader
-          { loader: 'postcss-loader'},
           // [sass-loader](/loaders/sass-loader)
           { loader: 'sass-loader' }
         ]
