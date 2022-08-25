@@ -8,6 +8,7 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
       {
         test: /\.(sass|css|scss)$/,
         use: [
+          {loader: 'babel-loader'},
           // [style-loader](/loaders/style-loader)
           { loader: 'style-loader' },
           // [css-loader](/loaders/css-loader)
