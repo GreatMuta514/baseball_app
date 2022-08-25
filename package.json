@@ -23,8 +23,5 @@
   },
   "engines": {
     "node": "16.x"
-  },
-  "scripts": {
-    "watch": "./node_modules/.bin/webpack --watch --config webpack.dev.js"
   }
 }
