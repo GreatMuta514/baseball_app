@@ -20,10 +20,10 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-const images = require.context('../images', true)
-const imagePath = (name) => images(name, true)
+// const images = require.context('../images', true)
+// const imagePath = (name) => images(name, true)
 
-require("bootstrap/dist/js/bootstrap");
+// require("bootstrap/dist/js/bootstrap");
 
 // $(function() {
 //   function readURL(input) {
