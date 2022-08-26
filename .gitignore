@@ -7,7 +7,7 @@
 #.DS_Store
 .DS_Store
 #db
-db/development.sqlite3
+/db/development.sqlite3
 
 #vendor
 /vendor
