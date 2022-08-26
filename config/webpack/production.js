@@ -6,7 +6,7 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpg|gif)$/i,
         use: [
           {
             loader: 'file-loader',
