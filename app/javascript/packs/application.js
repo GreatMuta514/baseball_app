@@ -13,6 +13,7 @@ import "channels"
 // bootstrapの設定
 import "bootstrap";
 import "../src/application";
+import "bootstrap/dist/css/bootstrap.min.css";
 // font-awesomeの設定
 import '@fortawesome/fontawesome-free/js/all';
 
