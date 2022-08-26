@@ -19,6 +19,15 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
           },
           // [sass-loader](/loaders/sass-loader)
           { loader: 'sass-loader' }
+        ],
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'dirname/[contenthash].[ext]',
+            },
+          },
         ]
       }
     ]
