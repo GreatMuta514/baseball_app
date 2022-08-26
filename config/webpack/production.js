@@ -6,15 +6,6 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'dirname/[contenthash].[ext]',
-            },
-          },
-        ],
         test: /\.scss$/,
         use: [
           // [style-loader](/loaders/style-loader)
@@ -29,6 +20,15 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
           // [sass-loader](/loaders/sass-loader)
           { loader: 'sass-loader' }
         ],
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'dirname/[contenthash].[ext]',
+            },
+          },
+        ]
       }
     ]
   }
