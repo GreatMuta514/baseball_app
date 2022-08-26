@@ -1,4 +1,6 @@
-const { environment } = require('@rails/webpacker');
+const { environment } = require('@rails/webpacker')
+
+module.exports = environment
 
 // jquery導入時に下記を記述した
 const webpack = require('webpack')
@@ -10,4 +12,3 @@ environment.plugins.prepend('Provide',
   })
 );
 // ここまで
-module.exports = environment;
