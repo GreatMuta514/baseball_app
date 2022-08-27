@@ -6,6 +6,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 // bootstrapの設定
+import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap";
 import "../src/application";
 // font-awesomeの設定
@@ -15,7 +16,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// webpackで画像を表示する
+// webpackでimage_pack_tagヘルパーメソッドで画像を表示する
 const images = require.context('../images', true)
 const imagePath = (name) => images(name, true)
 
