@@ -5,11 +5,16 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+
 // bootstrapの設定
 import { Tooltip, Toast, Popover } from "bootstrap";
+// bootstrapのスタイルシート側の機能を読み込む
 import "bootstrap/dist/css/bootstrap.min.css";
+// bootstrapのjs側の機能を読み込む
 import "bootstrap";
+// スタイルシートの読み込み
 import "../src/application";
+
 // font-awesomeの設定
 import '@fortawesome/fontawesome-free/js/all';
 
