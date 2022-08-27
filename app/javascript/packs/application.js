@@ -7,6 +7,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 // bootstrapの設定
 import { Tooltip, Toast, Popover } from "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "../src/application";
 // font-awesomeの設定
