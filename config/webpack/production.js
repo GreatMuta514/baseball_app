@@ -17,7 +17,7 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|sass|scss)$/,
         use: [
           // [style-loader](/loaders/style-loader)
           { loader: 'style-loader' },
