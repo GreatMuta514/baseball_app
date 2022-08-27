@@ -17,36 +17,45 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
         ]
       },
       {
+        // 対象となるファイルの拡張子(scss)
         test: /\.scss$/,
+        // Sassファイルの読み込みとコンパイル
         use: [
-          { 
-            loader: MiniCssExtractPlugin.loader 
-          },
-          // [css-loader](/loaders/css-loader)
+          // CSSファイルを書き出すオプションを有効にする
           {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
+            loader: MiniCssExtractPlugin.loader,
           },
+          // CSSをバンドルするための機能
           {
-            loader: 'postcss-loader',
+            loader: "css-loader",
             options: {
-              // `postcssOptions` is needed for postcss 8.x;
-              // if you use postcss 7.x skip the key
+              // オプションでCSS内のurl()メソッドの取り込まない
+              url: false,
+              // ソースマップの利用有無
+              sourceMap: true,
+              // Sass+PostCSSの場合は2を指定
+              importLoaders: 2,
+            },
+          },
+          // PostCSSのための設定
+          {
+            loader: "postcss-loader",
+            options: {
+              // PostCSS側でもソースマップを有効にする
+              sourceMap: true,
               postcssOptions: {
-                // postcss plugins, can be exported to postcss.config.js
-                plugins: function () {
-                  return [
-                    require('autoprefixer')
-                  ];
-                }
-              }
-            }
+                // ベンダープレフィックスを自動付与する
+                plugins: ["autoprefixer"],
+              },
+            },
           },
-          // [sass-loader](/loaders/sass-loader)
-          { 
-            loader: 'sass-loader' 
+          // Sassをバンドルするための機能
+          {
+            loader: "sass-loader",
+            options: {
+              // ソースマップの利用有無
+              sourceMap: true,
+            }
           }
         ]
       }
