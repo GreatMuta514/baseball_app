@@ -1,13 +1,11 @@
 //= require jquery
 //= require jquery_ujs
 
-
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 // bootstrapの設定
-import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap";
 import "../src/application";
 // font-awesomeの設定
@@ -17,8 +15,9 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+// webpackで画像を表示する
+const images = require.context('../images', true)
+const imagePath = (name) => images(name, true)
 
 // require("bootstrap/dist/js/bootstrap");
 
