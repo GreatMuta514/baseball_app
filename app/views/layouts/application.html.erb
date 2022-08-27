@@ -8,14 +8,14 @@
 
     <%# webpackerで管理したjsファイルを適用 %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%# webpackerで管理したscssファイルを適用 %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="margin-top:56px;">
-    
-      <%= render 'shared/header' %>
-    
+  <body>
+    <%= render 'shared/header' %>
     <%= render 'shared/flash_message' %>
     <%= yield %>
   </body>
