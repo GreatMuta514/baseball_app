@@ -19,9 +19,9 @@ module.exports = Object.assign({}, environment.toWebpackConfig(), {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          // [style-loader](/loaders/style-loader)
-          { loader: 'style-loader' },
+          { 
+            loader: MiniCssExtractPlugin.loader 
+          },
           // [css-loader](/loaders/css-loader)
           {
             loader: 'css-loader',
