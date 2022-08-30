@@ -16,7 +16,8 @@ class ProGamePredictsController < ApplicationController
     if @pro_game_predict.save
       redirect_to request.referer, success: "予想を投稿しました。"
     else
-      render 'pro_game_predict/new', danger: "予想の投稿に失敗しました"
+      render 'pro_game_predict/new'
+      flash.now[:danger] = "予想の投稿に失敗しました"
     end
   end
 
