@@ -12,7 +12,7 @@
 
       <% unless current_user %>
         <li class="nav-item">
-          <%= link_to 'ライブチャット', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
+          <%= link_to 'リアルタイムチャット', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
         </li>
         <li class="nav-item">
           <%= link_to '会員登録', new_user_path, class: 'nav-link', aria_current: 'page' %>
@@ -26,7 +26,7 @@
       <% else %>
 
         <li class="nav-item">
-          <%= link_to 'ライブチャット', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
+          <%= link_to 'リアルタイムチャット', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
         </li>
 
         <li class="nav-item dropdown">
