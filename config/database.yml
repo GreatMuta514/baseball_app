@@ -49,9 +49,9 @@ production:
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: baseball_app_production
-  username: baseball_app
-  password: '<%= ENV['BASEBALL_APP_DATABASE_PASSWORD'] %>'
+  database: <%= ENV['DB_NAME'] %> 
+  username: <%= ENV['DB_USERNAME'] %>
+  password: '<%= ENV['DB_PASSWORD'] %>'
 
 # default: &default
 #   adapter: mysql2
