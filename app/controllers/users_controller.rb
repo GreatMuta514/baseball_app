@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   end
 
   def require_logout
-    redirect_to root_path, danger: "既にログインしています。もしゲストでログインした場合、右上の「ユーザー」から一度ログアウトしてください。"  if current_user
+    redirect_to root_path, danger: "既にログインしています。もしゲストで使っている場合、右上の「ユーザー」から一度ログアウトしてください。"  if current_user
   end
 
 end
