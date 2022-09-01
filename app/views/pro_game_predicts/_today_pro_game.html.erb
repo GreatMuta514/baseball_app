@@ -6,21 +6,39 @@
   </div>
   <div class="col-2 mt-3">
     <%= f.label :スコア予想, class: 'form-label' %>
-    <%= f.number_field :first_base_side_score, name: 'first_base_side_score' , min: 0, max: 33, style: 'width:50px;', class: 'form-control mx-auto', placeholder: '0', type:'tel' %>
+    <%= f.number_field :first_base_side_score, name: 'first_base_side_score', id: 'first_base_side_score', min: 0, max: 33, style: 'width:50px;', class: 'form-control mx-auto', type:'tel' %>
   </div>
   <div class="col-2 pt-4 mt-4">
     <%= l today_pro_game.start_at %>
   </div>
   <div class="col-2 mt-3">
     <%= f.label :スコア予想, class: 'form-label' %>
-    <%= f.number_field :third_base_side_score, name: 'third_base_side_score' , min: 0, max: 33, style: 'width:50px;', class: 'form-control mx-auto', placeholder: '0', type:'tel' %>
+    <%= f.number_field :third_base_side_score, name: 'third_base_side_score', id: 'third_base_side_score', min: 0, max: 33, style: 'width:50px;', class: 'form-control mx-auto', type:'tel' %>
   </div>
   <div class="col-3 mt-3">
     <h4 class="fw-bold mt-3"><%= today_pro_game.third_base_side_pro_team %></h4>
     <%= today_pro_game.third_base_side_pitcher %>
   </div>
   <div>
-    <%= f.submit "投票する", class: 'btn btn-primary mb-3', data: { confirm: "これで投票してもいいですか？" } %>
+    <%= f.submit "投票する", class: 'btn btn-primary mb-3', id: 'pro_game_predict_submit_button', :onclick => "return check_form()" %>
   </div>
 </div>
 <% end %>
+<script>
+  function check_form() {
+    var first_base_side_pro_team = '<%= today_pro_game.first_base_side_pro_team %>';
+    var third_base_side_pro_team = '<%= today_pro_game.third_base_side_pro_team %>';
+    var first_base_side_score = document.getElementById('first_base_side_score').value;
+    var third_base_side_score = document.getElementById('third_base_side_score').value;
+
+    if ( !first_base_side_score || !third_base_side_score ) {
+      window.alert('両チームのスコアを入力してください');
+      return false;
+    }else {
+      var submitMessage = window.confirm(first_base_side_pro_team + ' ' + first_base_side_score + '-' + third_base_side_score + ' ' + third_base_side_pro_team + 'で投票してもいいですか？');
+      if (!submitMessage) {
+        return false;
+      };
+    };
+  };
+</script>
