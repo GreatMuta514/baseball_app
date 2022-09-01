@@ -6,6 +6,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+// bootstrapの設定（これがないとナビゲーションバーが効かないので注意）
 import "bootstrap";
 
 // font-awesomeの設定
