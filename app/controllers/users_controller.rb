@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :require_login, only: %i[index show edit update destroy]
   before_action :correct_user, only: %i[edit update destroy]
-  before_action :require_logout
+  before_action :require_logout, only: %i[new create]
 
   # GET /users
   def index
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      auto_login(@user)
       redirect_to user_url(@user), success: 'User was successfully created.'
     else
       render :new, status: :unprocessable_entity
