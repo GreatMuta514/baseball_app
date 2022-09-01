@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :require_login, only: %i[index show edit update destroy]
   before_action :correct_user, only: %i[edit update destroy]
+  before_action :require_logout
 
   # GET /users
   def index
@@ -59,6 +60,10 @@ class UsersController < ApplicationController
 
   def correct_user
     redirect_back fallback_location: chatrooms_path, danger:'他のユーザーです' if @user != current_user
+  end
+
+  def require_logout
+    redirect_to root_path, danger: "既にログインしています。もしゲストでログインした場合、右上の「ユーザー」から一度ログアウトしてください。"  if current_user
   end
 
 end
