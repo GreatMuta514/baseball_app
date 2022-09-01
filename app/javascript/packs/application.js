@@ -6,6 +6,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import "bootstrap";
+
 // font-awesomeの設定
 import '@fortawesome/fontawesome-free/js/all';
 
