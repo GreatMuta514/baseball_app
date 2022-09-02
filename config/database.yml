@@ -51,6 +51,7 @@ production:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: <%= ENV['DB_NAME'] %> 
   username: <%= ENV['DB_USERNAME'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
 
 # default: &default
