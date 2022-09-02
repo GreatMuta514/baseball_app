@@ -51,7 +51,7 @@ production:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: <%= ENV['DB_NAME'] %> 
   username: <%= ENV['DB_USERNAME'] %>
-  password: '<%= ENV['DB_PASSWORD'] %>'
+  password: <%= ENV['DB_PASSWORD'] %>
 
 # default: &default
 #   adapter: mysql2
