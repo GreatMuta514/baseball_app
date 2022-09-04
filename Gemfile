@@ -22,6 +22,8 @@ gem 'rails-i18n'
 # 画像投稿機能
 gem 'carrierwave'
 gem 'mini_magick'
+# carrierwaveを使って本番環境でも画像を表示できるようにする
+gem 'fog-aws'
 # デバッグツール
 gem 'pry-rails'
 # sorcery
