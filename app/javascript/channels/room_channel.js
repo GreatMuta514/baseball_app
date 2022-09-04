@@ -1,7 +1,12 @@
 import consumer from "./consumer"
 
 document.addEventListener('turbolinks:load', () => {
-  window.chatContainer = document.getElementById('chat_container')
+  // create.js.erbで使うので定義しておく
+  window.chatContainer = document.getElementById('chat_container');
+
+
+
+  // 以下のプログラムが他のページで動作しないようにする
   if (chatContainer === null) {
     return false
   };
@@ -20,6 +25,8 @@ document.addEventListener('turbolinks:load', () => {
       // データを受け取った時に以下を発動する
       document.getElementById('chat_container').insertAdjacentHTML('beforeend', data['chat']);
       scrollToBottom();
+      // 以下で複製されるバグがなくなる
+      chatContainer.unsbscribe();
     }
   });
     
