@@ -5,6 +5,7 @@ class ChatroomsController < ApplicationController
   
   def show
     @chatroom = Chatroom.find(params[:id])
+    @user = current_user
     
     @chats = Chat.where(chatroom: @chatroom).includes(:user)
     @submitting_chat = Chat.new

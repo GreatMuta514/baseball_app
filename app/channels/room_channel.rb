@@ -1,6 +1,10 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "room_channel"
+    @user = User.find(params[:user_id])
+    reject if @user.nil?
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    reject if @chatroom.nil?
+    stream_from "room_channel_#{params[:chatroom_id]}"
   end
 
   def unsubscribed
