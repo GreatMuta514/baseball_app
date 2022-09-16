@@ -4,7 +4,6 @@ RSpec.describe User, type: :model do
   describe "入力が正しければ保存に成功する" do
     it "ニックネーム、メールアドレス、パスワードがあれば保存できること" do
       user = FactoryBot.build(:user)
-      user.valid?
       expect(user).to be_valid
     end
   end
