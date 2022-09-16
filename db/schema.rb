@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_16_063138) do
+ActiveRecord::Schema.define(version: 2022_09_16_070146) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "thumbnail"
@@ -66,13 +66,13 @@ ActiveRecord::Schema.define(version: 2022_09_16_063138) do
   end
 
   create_table "pro_game_predicts", force: :cascade do |t|
-    t.integer "first_base_side_score"
-    t.integer "third_base_side_score"
+    t.integer "first_base_side_score", null: false
+    t.integer "third_base_side_score", null: false
     t.integer "user_id", null: false
-    t.integer "win_or_lose"
+    t.integer "win_or_lose", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "pro_game_id"
+    t.integer "pro_game_id", null: false
     t.integer "point"
     t.index ["pro_game_id"], name: "index_pro_game_predicts_on_pro_game_id"
     t.index ["user_id"], name: "index_pro_game_predicts_on_user_id"
