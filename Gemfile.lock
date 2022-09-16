@@ -107,6 +107,11 @@ GEM
     erubi (1.11.0)
     excon (0.92.4)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     faraday (2.5.2)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -382,6 +387,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   dotenv-rails
+  factory_bot_rails
   fog-aws
   jquery-rails
   letter_opener_web
