@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_13_024000) do
+ActiveRecord::Schema.define(version: 2022_09_16_054918) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "thumbnail"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2022_08_13_024000) do
   end
 
   create_table "pro_games", force: :cascade do |t|
-    t.string "field", null: false
+    t.string "field"
     t.string "first_base_side_pro_team", null: false
     t.string "third_base_side_pro_team", null: false
     t.integer "first_base_side_score"
@@ -91,6 +91,15 @@ ActiveRecord::Schema.define(version: 2022_08_13_024000) do
     t.datetime "finish_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_chatrooms", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "chatroom_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_user_chatrooms_on_chatroom_id"
+    t.index ["user_id"], name: "index_user_chatrooms_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -119,4 +128,6 @@ ActiveRecord::Schema.define(version: 2022_08_13_024000) do
   add_foreign_key "pro_game_predict_comments", "users"
   add_foreign_key "pro_game_predicts", "pro_games"
   add_foreign_key "pro_game_predicts", "users"
+  add_foreign_key "user_chatrooms", "chatrooms"
+  add_foreign_key "user_chatrooms", "users"
 end
