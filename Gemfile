@@ -53,6 +53,8 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
+  # テストではrspecを使う
+  gem 'rspec-rails'
   # 開発環境ではsqlite3を使う
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
