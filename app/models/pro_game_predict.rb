@@ -4,8 +4,8 @@ class ProGamePredict < ApplicationRecord
 
   enum win_or_lose: { first_base_side_win: 0, third_base_side_win: 1, draw: 2 }
 
-  validates :first_base_side_score, presence: true
-  validates :third_base_side_score, presence: true
+  validates :first_base_side_score, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 33 }, format: { with: /\A[0-9]+\z/ }
+  validates :third_base_side_score, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 33 }, format: { with: /\A[0-9]+\z/ }
   validates :user_id, presence: true
   validates :pro_game_id, presence: true
   validates :win_or_lose, presence: true
