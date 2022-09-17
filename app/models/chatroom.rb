@@ -4,4 +4,5 @@ class Chatroom < ApplicationRecord
   belongs_to :pro_game
   has_many :chats, dependent: :destroy
 
+  validates :pro_game_id, presence: true
 end
