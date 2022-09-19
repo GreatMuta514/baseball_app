@@ -8,6 +8,10 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # テスト環境でもbootstrapを適用するようにした
+  # config.assets.prefix = "assets_test"    # place test assets in public/assets_test directory
+  # config.action_controller.asset_host = "file://#{::Rails.root}/public"
+
   config.cache_classes = false
   config.action_view.cache_template_loading = true
 

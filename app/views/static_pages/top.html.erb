@@ -5,19 +5,19 @@
       <div class="row">
         <div class="col rounded text-center">
           <h5 class="mb-3 text-light">既に登録済みの方</h5>
-          <%= link_to "ログイン", login_path, class: 'btn btn-primary mb-3' %>
+          <%= button_to "ログイン", login_path, class: 'btn btn-primary mb-3', method: :get %>
           <br>
           <%= link_to "パスワードを忘れた方はこちら", new_password_reset_path %>
           <br>
           <br>
           <h5 class="mb-3 text-light">軽く触ってみたい方はこちら</h5>
-          <%= link_to "ゲストログイン", guest_login_path, method: :post, class: 'btn btn-primary mb-3' %>
+          <%= button_to "ゲストログイン", guest_login_path, class: 'btn btn-primary mb-3' %>
         </div>
         <div class="col rounded text-center">
           <h5 class="text-light mb-3">まだ登録してない方</h5>
-          <%= link_to "ユーザー登録", new_user_path, class: 'btn btn-primary mb-3' %>
+          <%= button_to "ユーザー登録", new_user_path, class: 'btn btn-primary mb-3', method: :get %>
           <h5 class="mt-3 text-light mb-3">登録なしで利用する</h5>
-          <%= link_to "チャットルーム一覧", chatrooms_path, class: 'btn btn-primary' %>
+          <%= button_to "チャットルーム一覧", chatrooms_path, class: 'btn btn-primary', method: :get %>
         </div>
       </div>
     </section>

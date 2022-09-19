@@ -39,6 +39,7 @@
 
 # Ignore uploaded files in development
 /public/uploads/
+/public/assets_test/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
