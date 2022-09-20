@@ -16,6 +16,9 @@ ja:
   user_sessions:
     new:
       title: ログイン
+    create:
+      success: ログインしました
+      danger: メールアドレスまたはパスワードが間違っています
     form:
       button: ログイン
   chatrooms:
