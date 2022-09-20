@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
     if @user.save
       auto_login(@user)
-      redirect_to user_url(@user), success: 'User was successfully created.'
+      redirect_to user_url(@user), success: t(".success")
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to user_url(@user), success: 'User was successfully updated.'
+      redirect_to user_url(@user), success: t(".success")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_back fallback_location: chatrooms_path, danger:'他のユーザーです' if @user != current_user
+    redirect_back fallback_location: chatrooms_path, danger: "他のユーザーです" if @user != current_user
   end
 
   def require_logout

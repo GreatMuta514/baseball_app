@@ -2,11 +2,17 @@ ja:
   users:
     new:
       title: ユーザー登録
+    create:
+      success: ユーザー登録が完了しました
     index:
       title: ユーザー一覧
       show: 詳細
       edit: 編集
       destroy: 削除
+    show:
+      edit: 編集
+    update:
+      success: プロフィールの更新が完了しました
   user_sessions:
     new:
       title: ログイン

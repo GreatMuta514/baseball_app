@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
 
     it "メールアドレスが重複している場合保存できない" do
       user = FactoryBot.create(:user)
-      duplicate_email_user = FactoryBot.build(:user)
+      duplicate_email_user = FactoryBot.build(:user,email: user.email)
       duplicate_email_user.valid?
       expect(duplicate_email_user.errors[:email]).to include("はすでに存在します")
     end

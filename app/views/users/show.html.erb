@@ -9,6 +9,8 @@
   <%= @user.nickname %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<% if @user == current_user %>
+  <%= link_to t(".edit"), edit_user_path(@user), class: "edit-link-#{@user.id}" %> |
+<% end %>
 <%= link_to 'Back', user_path(@user) %>
 </div>

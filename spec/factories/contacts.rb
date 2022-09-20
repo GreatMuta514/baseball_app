@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :contact do
-    email { "sample@example.com" }
+    sequence(:email) { |n| "sample#{n}@example.com" }
     subject { 0 }
     message { SecureRandom.alphanumeric(400) }
 
