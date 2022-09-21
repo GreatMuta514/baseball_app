@@ -1,4 +1,5 @@
 class ChatroomsController < ApplicationController
+  before_action :require_login, only: :show
   def index
     @chatrooms = Chatroom.where(created_at: Time.current.all_day).includes(:pro_game)
   end

@@ -1,4 +1,6 @@
 ja:
+  all:
+    alert: ログインまたは会員登録してください
   users:
     new:
       title: ユーザー登録

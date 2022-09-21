@@ -5,7 +5,7 @@ module LoginSupport
     fill_in "email", with: user.email
     fill_in "password", with: "password"
     click_button "ログイン"
-    expect(page).to have_content "Login successful"
+    expect(page).to have_content(I18n.t("user_sessions.create.success"))
   end
 end
 

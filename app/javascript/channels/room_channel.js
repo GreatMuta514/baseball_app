@@ -51,7 +51,7 @@ document.addEventListener('turbolinks:load', () => {
 
     //チャットのフォームのボタンに関する処理
     const button_activation = () => {
-      if (submittingChatContent.value === ''){
+      if (submittingChatContent.value === '' || submittingChatContent.value.length > 100){
         chatButton.classList.add('disabled')
       } else {
         chatButton.classList.remove('disabled')

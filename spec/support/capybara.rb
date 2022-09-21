@@ -6,7 +6,10 @@ RSpec.configure do |config|
 
   # JavaScriptドライバとしてseleniumを使う
   config.before(:each, type: :system, js: true) do
-    driven_by :selenium_chrome
+    # jsテスト時にchromeで目視で確認するには
+    # driven_by :selenium_chrome
+    # chromeで目視で確認したくないときは
+    driven_by :selenium_chrome_headless
   end
 
   # テスト実行時にbundle exec rake assets:precompileを実行する
@@ -15,5 +18,5 @@ RSpec.configure do |config|
   # end
   
   # capybaraの待ち時間を15秒に
-  Capybara.default_max_wait_time = 15
+  Capybara.default_max_wait_time = 3
 end
