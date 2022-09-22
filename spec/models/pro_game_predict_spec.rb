@@ -73,4 +73,17 @@ RSpec.describe ProGamePredict, type: :model do
     end
   end
   
+  describe "予想ポイントのバリデーションチェック" do
+    it "予想ポイントが101点の時、保存できない" do
+      pro_game_predict.point = 101
+      pro_game_predict.valid?
+      expect(pro_game_predict.errors[:point]).to include("は100以下の値にしてください")
+    end
+
+    it "予想ポイントがマイナスの時、保存できない" do
+      pro_game_predict.point = -1
+      pro_game_predict.valid?
+      expect(pro_game_predict.errors[:point]).to include("は0以上の値にしてください")
+    end
+  end
 end

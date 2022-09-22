@@ -9,6 +9,7 @@ class ProGamePredict < ApplicationRecord
   validates :user_id, presence: true
   validates :pro_game_id, presence: true
   validates :win_or_lose, presence: true
+  validates :point, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
 
   #予想の勝敗を判定する
   def input_win_or_lose

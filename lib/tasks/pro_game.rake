@@ -105,6 +105,7 @@ namespace :pro_game do
         score_difference_02 = (yesterday_pro_game.third_base_side_score - pro_game_predict.third_base_side_score).abs
         pro_game_predict.point -= (score_difference_01 + score_difference_02) * 5
         pro_game_predict.point += 40 if yesterday_pro_game.result == pro_game_predict.win_or_lose
+        pro_game_predict.point = 0 if pro_game_predict.point < 0
       end
 
       pro_game_predict.save!
