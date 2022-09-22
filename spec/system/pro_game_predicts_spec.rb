@@ -62,15 +62,6 @@ RSpec.describe "ProGamePredicts", type: :system do
       }.to change(ProGamePredictComment.all, :count).by(1)
       expect(page).to have_content("予想楽しい")
     end
-    
-    it "コメントを入力していない場合、送信ボタンを押せない" do
-
-    end
-
-    it "コメントが141字以上の時、送信できない" do
-
-    end
-
   end
 
   describe "予想結果" do

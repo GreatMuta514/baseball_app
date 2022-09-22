@@ -16,6 +16,7 @@
 
   <section>
     <h4 class='mt-5'>予想コメント</h4>
+    <p>(140文字以内)</p>
     <% if @current_user_predict %>
       <%= form_with model: @pro_game_predict_comment, url: pro_game_pro_game_predict_comments_url, local: false, class:'my-3', id: "pro_game_predict_comment_form_#{@today_pro_game.id}" do |f| %>
           <%= f.text_area :body, id:'pro_game_predict_comment_value', class: 'form-control'%>
