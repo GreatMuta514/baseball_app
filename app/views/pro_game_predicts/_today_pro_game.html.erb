@@ -34,7 +34,11 @@
     if ( !first_base_side_score || !third_base_side_score ) {
       window.alert('両チームのスコアを入力してください');
       return false;
-    }else {
+    }else if (first_base_side_score.match(/^[^\x01-\x7E\uFF61-\uFF9F]+$/) || third_base_side_score.match(/^[^\x01-\x7E\uFF61-\uFF9F]+$/)) {
+      window.alert('半角数字で入力してください');
+      return false;
+    }
+    else {
       var submitMessage = window.confirm(first_base_side_pro_team + ' ' + first_base_side_score + '-' + third_base_side_score + ' ' + third_base_side_pro_team + 'で投票してもいいですか？');
       if (!submitMessage) {
         return false;

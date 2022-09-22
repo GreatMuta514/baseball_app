@@ -1,8 +1,11 @@
 <div class="container">
-  
   <section class="text-center">
     <h2 class="pt-3">勝敗予想</h2>
-    <%= render 'today_pro_game', today_pro_game: @today_pro_game %>
+    <% if @current_user_predict %>
+      <%= render 'already_predict', { today_pro_game: @today_pro_game, current_user_predict: @current_user_predict } %>
+    <% else %>
+      <%= render 'today_pro_game', today_pro_game: @today_pro_game %>
+    <% end %>
   </section>
 
   <%# <section>
@@ -10,22 +13,19 @@
     <br>
     <br>
   </section> %>
-  
+
   <section>
     <h4 class='mt-5'>予想コメント</h4>
-    
-      <% if @current_user_predict %>
-        <%= form_with model: @pro_game_predict_comment, url: pro_game_pro_game_predict_comments_url, local: false, class:'my-3' do |f| %>
-            <%= f.text_area :body, id:'pro_game_predict_comment_value', class: 'form-control'%>
-            <%= f.submit "送信する", class: 'btn btn-primary my-3' %>
-        <% end %>
-          <div class="pro_game_predict_comments" id="pro_game_predict_comments">
-            <%= render partial: 'pro_game_predicts/pro_game_predict_comment', locals: { today_pro_game: @today_pro_game, current_user_predict: @current_user_predict }, collection: @pro_game_predict_comments %>
-          </div>
-      <% else %>
-        <h5 class='mt-5'>予想を投稿すれば表示されます</h5>
+    <% if @current_user_predict %>
+      <%= form_with model: @pro_game_predict_comment, url: pro_game_pro_game_predict_comments_url, local: false, class:'my-3', id: "pro_game_predict_comment_form_#{@today_pro_game.id}" do |f| %>
+          <%= f.text_area :body, id:'pro_game_predict_comment_value', class: 'form-control'%>
+          <%= f.submit "送信する", class: 'btn btn-primary my-3' %>
       <% end %>
-    
+        <div class="pro_game_predict_comments" id="pro_game_predict_comments">
+          <%= render partial: 'pro_game_predicts/pro_game_predict_comment', locals: { today_pro_game: @today_pro_game, current_user_predict: @current_user_predict }, collection: @pro_game_predict_comments %>
+        </div>
+    <% else %>
+      <h5 class='mt-5'>予想を投稿すれば表示されます</h5>
+    <% end %>  
   </section>
-  
 </div>

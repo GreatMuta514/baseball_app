@@ -2,9 +2,7 @@ class ProGamePredictsController < ApplicationController
 
   def new
     @today_pro_game = ProGame.find(params[:pro_game_id])
-    
     @pro_game_predict_comments = @today_pro_game.pro_game_predict_comments.order(created_at: :desc).includes(:user, :pro_game)
-
     @current_user_predict = current_user.pro_game_predicts.find_by(pro_game_id:params[:pro_game_id])
   end
 
@@ -17,7 +15,7 @@ class ProGamePredictsController < ApplicationController
       redirect_to request.referer, success: "予想を投稿しました。"
     else
       render 'pro_game_predict/new'
-      flash.now[:danger] = "予想の投稿に失敗しました"
+      flash.now[:danger] = "半角数字で入力してください"
     end
   end
 
