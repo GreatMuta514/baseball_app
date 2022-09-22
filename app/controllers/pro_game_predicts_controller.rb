@@ -12,10 +12,10 @@ class ProGamePredictsController < ApplicationController
     @pro_game_predict.input_win_or_lose
 
     if @pro_game_predict.save
-      redirect_to request.referer, success: "予想を投稿しました。"
+      redirect_to request.referer, success: t(".success")
     else
       render 'pro_game_predict/new'
-      flash.now[:danger] = "半角数字で入力してください"
+      flash.now[:danger] = t(".danger")
     end
   end
 

@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:root, success: 'Logout successful')
+    redirect_to(:root, success: t(".success"))
   end
 
   def guest_login
@@ -26,7 +26,7 @@ class UserSessionsController < ApplicationController
       password_confirmation: 'password'
       )
     auto_login(@guest_user)
-    redirect_back_or_to(:chatrooms, success: 'Login successful')
+    redirect_back_or_to(:chatrooms, success: t(".success"))
   end
 
 end

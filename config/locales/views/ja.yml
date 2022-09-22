@@ -17,17 +17,40 @@ ja:
       success: プロフィールの更新が完了しました
     destroy:
       danger: アカウントを削除しました
+    correct_user:
+      danger: 他のユーザーです
+    require_logout:
+      danger: 既にログインしています。もしゲストで使っている場合、右上の「ユーザー」から一度ログアウトしてください。
   user_sessions:
     new:
       title: ログイン
     create:
       success: ログインしました
       danger: メールアドレスまたはパスワードが間違っています
+    destroy:
+      success: ログアウトしました
+    guest_login:
+      success: ゲストログインしました
     form:
       button: ログイン
   chatrooms:
     index:
       title: チャットルーム
+      contacts:
+        create:
+          danger: 問い合わせが送信できませんでした
+  password_resets:
+    create:
+      success: パスワードリセット手順を送信しました
+    update:
+      success: パスワードを更新しました
+  pro_game_predicts:
+    create:
+      success: 予想を投稿しました。
+      danger: 半角数字で入力してください
+  pro_game_predict_comments:
+    create:
+      danger: コメントを送信できませんでした
   time:
     formats:
       default: '%m月%d日 %H:%M'

@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
       ContactMailer.send_contact_email(@contact).deliver_now
       redirect_to contacts_done_path
     else
-      flash.now[:danger] = '問い合わせが送信できませんでした。'
+      flash.now[:danger] = t(".danger")
       render 'contacts/new'
     end
   end

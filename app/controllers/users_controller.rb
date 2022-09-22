@@ -60,11 +60,11 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_back fallback_location: chatrooms_path, danger: "他のユーザーです" if @user != current_user
+    redirect_back fallback_location: chatrooms_path, danger: I18n.t("users.correct_user.danger") if @user != current_user
   end
 
   def require_logout
-    redirect_to root_path, danger: "既にログインしています。もしゲストで使っている場合、右上の「ユーザー」から一度ログアウトしてください。"  if current_user
+    redirect_to root_path, danger: I18n.t("users.require_logout.danger") if current_user
   end
 
 end

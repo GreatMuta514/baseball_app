@@ -6,7 +6,7 @@ class ProGamePredictCommentsController < ApplicationController
     else
       @today_pro_game = ProGame.find(params[:pro_game_id])
       @pro_game_predict_comments = @today_pro_game.pro_game_predict_comments.order(created_at: :desc).includes(:user, :pro_game)
-      render 'pro_game_predicts/new', danger: 'コメントを送信できませんでした。'
+      render 'pro_game_predicts/new', danger: t(".danger")
     end
   end
 
