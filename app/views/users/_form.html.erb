@@ -18,6 +18,10 @@
     <%= form.text_field :email, class: 'form-control' %>
   </div>
 
+  <% if current_user %>
+    <%= link_to "アカウントを削除", user_path, method: :delete, data: { confirm: "アカウントを本当に削除しますか？" }, class: 'text-danger' %>
+  <% end %>
+
   <% unless current_user %>
   <div class="field">
     <%= form.label :password, class: 'form-label' %><br />

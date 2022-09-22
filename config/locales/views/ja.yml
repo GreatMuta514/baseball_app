@@ -15,6 +15,8 @@ ja:
       edit: 編集
     update:
       success: プロフィールの更新が完了しました
+    destroy:
+      danger: アカウントを削除しました
   user_sessions:
     new:
       title: ログイン

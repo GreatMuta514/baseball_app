@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to new_user_url, success: 'User was successfully destroyed.'
+    redirect_to root_path, success: t(".danger")
   end
 
   private
