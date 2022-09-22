@@ -63,8 +63,4 @@ RSpec.describe "ProGamePredicts", type: :system do
       expect(page).to have_content("予想楽しい")
     end
   end
-
-  describe "予想結果" do
-
-  end
 end
