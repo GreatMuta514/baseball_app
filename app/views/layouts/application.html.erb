@@ -14,6 +14,7 @@
 
   <body style="margin-top:56px;">
     <%= render 'shared/header' %>
+    <%= breadcrumbs separator: " &rsaquo; " %>
     <%= render 'shared/flash_message' %>
     <%= yield %>
   </body>
