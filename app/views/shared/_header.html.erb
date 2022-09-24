@@ -26,7 +26,7 @@
       <% else %>
 
         <li class="nav-item">
-          <%= link_to 'リアルタイムチャット', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
+          <%= link_to 'リアルタイム実況', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
         </li>
 
         <li class="nav-item dropdown">
@@ -34,7 +34,7 @@
             予想
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%= link_to '予想一覧', game_predicts_path, class: 'nav-link' %></li>
+            <li><%= link_to '今日の試合予想', game_predicts_path, class: 'nav-link' %></li>
             <li><%= link_to '予想結果', game_predicts_results_path, class: 'nav-link' %></li>
           </ul>
         </li>
