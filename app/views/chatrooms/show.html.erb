@@ -1,8 +1,8 @@
 <% breadcrumb :chatroom, @chatroom %>
 <div id="data" data-chatroom-id="<%= @chatroom.id %>" data-user-id="<%= @user.id %>"></div>
 <div class="container">
-  <h1><%= @chatroom.pro_game.first_base_side_pro_team %> - <%= @chatroom.pro_game.third_base_side_pro_team %></h1>
-  <div style="padding-bottom:70px;">
+  <h1 style="position: fixed; top: 80px; right: 0; left: 0; z-index: 1030; background-color: white;"><%= @chatroom.pro_game.first_base_side_pro_team %> - <%= @chatroom.pro_game.third_base_side_pro_team %></h1>
+  <div style="padding-top: 80px; padding-bottom:110px;">
     <div id="chat_container">
       <%= render partial: 'chat', collection: @chats, class:'float-end' %>
     </div>
