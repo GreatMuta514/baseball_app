@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # NGワードリスト
-/config/blacklist.yml
+# /config/blacklist.yml
 #.DS_Store
 .DS_Store
 #db
