@@ -24,7 +24,7 @@
           <%= f.submit "送信する", class: 'btn btn-primary my-3' %>
       <% end %>
         <div class="pro_game_predict_comments" id="pro_game_predict_comments">
-          <%= render partial: 'pro_game_predicts/pro_game_predict_comment', locals: { today_pro_game: @today_pro_game, current_user_predict: @current_user_predict }, collection: @pro_game_predict_comments %>
+          <%= render partial: 'pro_game_predicts/pro_game_predict_comment', locals: { today_pro_game: @today_pro_game } , collection: @pro_game_predict_comments %>
         </div>
     <% else %>
       <h5 class='mt-5'>予想を投稿すれば表示されます</h5>
