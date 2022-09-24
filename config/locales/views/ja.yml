@@ -21,6 +21,8 @@ ja:
       danger: 他のユーザーです
     require_logout:
       danger: 既にログインしています。もしゲストで使っている場合、右上の「ユーザー」から一度ログアウトしてください。
+    reject_guest_user:
+      danger: この機能はゲストユーザーはご利用いただけません、ログアウトして会員登録が必要です
   user_sessions:
     new:
       title: ログイン

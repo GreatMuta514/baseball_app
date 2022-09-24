@@ -23,7 +23,8 @@ class UserSessionsController < ApplicationController
       nickname: 'ゲスト',
       email: SecureRandom.alphanumeric(10) + "@email.com",
       password: 'password',
-      password_confirmation: 'password'
+      password_confirmation: 'password',
+      role: 'guest'
       )
     auto_login(@guest_user)
     redirect_back_or_to(:chatrooms, success: t(".success"))
