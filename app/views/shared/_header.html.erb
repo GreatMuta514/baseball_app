@@ -29,21 +29,24 @@
           <%= link_to 'リアルタイム実況', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
         </li>
 
+
+
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             予想
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><%= link_to '今日の試合予想', game_predicts_path, class: 'nav-link' %></li>
             <li><%= link_to '予想結果', game_predicts_results_path, class: 'nav-link' %></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             ユーザー
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><%= link_to 'プロフィール', user_path(current_user), class: 'nav-link' %></li>
             <li><%= link_to 'プロフィール編集', edit_user_path(current_user), class: 'nav-link' %></li>
             <li><%= link_to 'ログアウト', logout_path, method: :post, class: 'nav-link' %></li>
@@ -51,10 +54,10 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             その他(まだ)
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><%= link_to 'プライバシーポリシー', static_pages_privacy_policy_path, class: 'nav-link' %></li>
             <li><%= link_to '利用規約', static_pages_terms_of_service_path, class: 'nav-link' %></li>
             <li><%= link_to '問い合わせ', new_contact_path, class: 'nav-link' %></li>
