@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :require_login, only: %i[index show edit update destroy]
   before_action :correct_user, only: %i[edit update destroy]
   before_action :require_logout, only: %i[new create]
-  before_action :rejct_guest_user, only: %i[edit update]
+  before_action :rejct_guest_user, only: %i[show edit update]
 
   # GET /users
   def index
