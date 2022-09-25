@@ -52,10 +52,10 @@
             <li><%= link_to 'ログアウト', logout_path, method: :post, class: 'nav-link' %></li>
           </ul>
         </li>
-
+      <% end %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            その他(まだ)
+            その他
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><%= link_to 'プライバシーポリシー', static_pages_privacy_policy_path, class: 'nav-link' %></li>
@@ -68,7 +68,7 @@
         <%# <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li> %>
-      <% end %>
+      
       </ul>
 
       <%# <form class="d-flex">
