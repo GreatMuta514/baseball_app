@@ -1,9 +1,6 @@
 <% breadcrumb :pro_game_predicts %>
 <div class="container text-center">
   <h1 class="my-3">今日の試合</h1>
-  <h2>高校野球(まだ)</h2>
-  <br>
-  <br>
   <h2 class="mb-4">プロ野球</h2>
     <% if @today_pro_games.present? %>
       <%= render partial: 'today_pro_game', collection: @today_pro_games %>
