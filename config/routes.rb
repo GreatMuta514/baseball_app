@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   #問い合わせ機能
   resources :contacts, only: [:new, :create]
   get 'contacts/done', to: 'contacts#done'
@@ -41,6 +40,10 @@ Rails.application.routes.draw do
   
   #ユーザー
   resources :users, except: [:index] 
+  
+  #利用規約・プライバシーポリシーなど
+  get 'static_pages/terms_of_service' => 'static_pages#terms_of_service'
+  get 'static_pages/privacy_policy' => 'static_pages#privacy_policy'
 
   #トップ
   get 'static_pages/top'
