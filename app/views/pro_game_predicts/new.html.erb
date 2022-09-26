@@ -1,7 +1,7 @@
 <% breadcrumb :pro_game_predict, @today_pro_game %>
 <div class="container">
   <section class="text-center">
-    <h2 class="pt-3">勝敗予想</h2>
+    <h2 class="pt-5">勝敗予想</h2>
     <% if @current_user_predict %>
       <%= render 'already_predict', { today_pro_game: @today_pro_game, current_user_predict: @current_user_predict } %>
     <% else %>
