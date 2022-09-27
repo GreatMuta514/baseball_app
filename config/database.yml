@@ -54,6 +54,7 @@ production:
   password: <%= Rails.application.credentials.db[:password] %>
   host: <%= Rails.application.credentials.db[:hostname] %>
 
+
 # default: &default
 #   adapter: mysql2
 #   encoding: utf8mb4
