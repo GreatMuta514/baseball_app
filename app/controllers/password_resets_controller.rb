@@ -14,7 +14,6 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    binding.pry
     @token = params[:id]
     @user = User.load_from_reset_password_token(params[:id])
     if @user.blank?

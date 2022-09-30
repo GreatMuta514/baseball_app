@@ -4,8 +4,6 @@ document.addEventListener('turbolinks:load', () => {
   // create.js.erbで使うので定義しておく
   window.chatContainer = document.getElementById('chat_container');
 
-
-
   // 以下のプログラムが他のページで動作しないようにする
   if (chatContainer === null) {
     return false
@@ -47,7 +45,6 @@ document.addEventListener('turbolinks:load', () => {
       window.scroll(0,document.documentElement.scrollHeight)
     };
     window.scrollToBottom();
-   
 
     //チャットのフォームのボタンに関する処理
     const button_activation = () => {
