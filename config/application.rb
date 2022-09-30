@@ -11,9 +11,9 @@ module BaseballApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    #デフォルトの言語をjaに設定
+    # デフォルトの言語をjaに設定
     config.i18n.default_locale = :ja
-    #複数のローケルファイルを読み込むように設定
+    # 複数のローケルファイルを読み込むように設定
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
     # デフォルトでmailboxのルーティングが設定されていたので削除
@@ -31,9 +31,9 @@ module BaseballApp
 
     config.generators do |g|
       g.test_framework :rspec,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false
     end
   end
 end

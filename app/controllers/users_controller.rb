@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
     if @user.save
       auto_login(@user)
-      redirect_to user_url(@user), success: t(".success")
+      redirect_to user_url(@user), success: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to user_url(@user), success: t(".success")
+      redirect_to user_url(@user), success: t('.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to root_path, success: t(".danger")
+    redirect_to root_path, success: t('.danger')
   end
 
   private
@@ -61,15 +61,14 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_back fallback_location: chatrooms_path, danger: I18n.t("users.correct_user.danger") if @user != current_user
+    redirect_back fallback_location: chatrooms_path, danger: I18n.t('users.correct_user.danger') if @user != current_user
   end
 
   def require_logout
-    redirect_to root_path, danger: I18n.t("users.require_logout.danger") if current_user
+    redirect_to root_path, danger: I18n.t('users.require_logout.danger') if current_user
   end
 
   def rejct_guest_user
-    redirect_back fallback_location: chatrooms_path, danger: t("users.reject_guest_user.danger") if current_user.guest?
+    redirect_back fallback_location: chatrooms_path, danger: t('users.reject_guest_user.danger') if current_user.guest?
   end
-
 end

@@ -84,11 +84,10 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  #メール関係（letter_opener）
-  config.action_mailer.delivery_method = :letter_opener #配信方法の指定
-  config.action_mailer.perform_deliveries = true #メールを実際に送信するかどうかの指定
+  # メール関係（letter_opener）
+  config.action_mailer.delivery_method = :letter_opener # 配信方法の指定
+  config.action_mailer.perform_deliveries = true # メールを実際に送信するかどうかの指定
 
-  #ホストの設定
+  # ホストの設定
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-
 end

@@ -8,13 +8,11 @@ class ChatsController < ApplicationController
     ActionCable.server.broadcast "room_channel_#{@chat.chatroom_id}", { chat: @chat.template }
   end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 
   def chat_params
     params.permit(:body, :chatroom_id)
   end
-
 end

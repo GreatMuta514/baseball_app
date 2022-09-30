@@ -1,5 +1,5 @@
 crumb :chatrooms do
-  link "今日の試合", chatrooms_path
+  link '今日の試合', chatrooms_path
 end
 
 crumb :chatroom do |chatroom|
@@ -8,7 +8,7 @@ crumb :chatroom do |chatroom|
 end
 
 crumb :pro_game_predicts do
-  link "今日の予想", game_predicts_path
+  link '今日の予想', game_predicts_path
 end
 
 crumb :pro_game_predict do |pro_game|
@@ -21,6 +21,6 @@ crumb :user do |user|
 end
 
 crumb :edit_user do |user|
-  link "プロフィール編集", edit_user_path(user)
+  link 'プロフィール編集', edit_user_path(user)
   parent :user, user
 end

@@ -7,5 +7,4 @@ class Chat < ApplicationRecord
   def template
     ApplicationController.renderer.render partial: 'chatrooms/chat', locals: { chat: self }
   end
-
 end

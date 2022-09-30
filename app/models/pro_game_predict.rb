@@ -11,7 +11,7 @@ class ProGamePredict < ApplicationRecord
   validates :win_or_lose, presence: true
   validates :point, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
 
-  #予想の勝敗を判定する
+  # 予想の勝敗を判定する
   def input_win_or_lose
     if first_base_side_score > third_base_side_score
       self.win_or_lose = :first_base_side_win
@@ -21,5 +21,4 @@ class ProGamePredict < ApplicationRecord
       self.win_or_lose = :draw
     end
   end
-
 end

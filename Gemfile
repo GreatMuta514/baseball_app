@@ -7,11 +7,11 @@ ruby '3.1.2'
 gem 'gretel'
 # bootstrap
 gem 'bootstrap', '~> 5.2.0'
-#herokuデプロイ時に必要
+# herokuデプロイ時に必要
 gem 'net-imap'
 gem 'net-pop'
 # githubにメールアドレスやパスワードをプッシュしないようにしてくれる。
-gem "dotenv-rails"
+gem 'dotenv-rails'
 # cronを使いやすくする
 gem 'whenever'
 # nokogiri
@@ -59,7 +59,7 @@ group :development, :test do
   # テストではrspecを使う
   gem 'rspec-rails'
   # テストデータでファクトリーボットを使う
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
   # 開発環境ではsqlite3を使う
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,11 +67,11 @@ group :development, :test do
 end
 
 group :development do
-  gem "capistrano", "~> 3.10", require: false
-  gem "capistrano-rails", "~> 1.6", require: false
+  gem 'capistrano', '~> 3.10', require: false
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-rbenv', '~> 2.2'
   gem 'capistrano-rbenv-vars', '~> 0.1'
-  gem 'capistrano3-puma'
   # rubocop導入
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
@@ -84,15 +84,15 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
   gem 'letter_opener_web'
+  gem 'spring'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
-  
-  #以下のseleniumはデフォルトで入っていたけど、昨日として使うので一旦消した
+
+  # 以下のseleniumはデフォルトで入っていたけど、昨日として使うので一旦消した
   # gem 'selenium-webdriver', '>= 4.0.0.rc1'
 
   # Easy installation and use of web drivers to run system tests with browsers
