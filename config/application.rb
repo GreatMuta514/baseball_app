@@ -15,7 +15,8 @@ module BaseballApp
     config.i18n.default_locale = :ja
     # 複数のローケルファイルを読み込むように設定
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
-
+    # eager_load
+    config.paths.add 'lib', eager_load: true
     # デフォルトでmailboxのルーティングが設定されていたので削除
     initializer(:remove_action_mailbox_and_activestorage_routes, after: :add_routing_paths) do |app|
       app.routes_reloader.paths.delete_if { |path| path =~ /activestorage/ }
