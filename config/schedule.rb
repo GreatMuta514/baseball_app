@@ -10,11 +10,11 @@ env :PATH, ENV['PATH']
 
 job_type :rake, 'eval "$(rbenv init -)"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output'
 
-every 1.day, at: '15:25' do
+every 1.day, at: '15:28' do
   rake 'pro_game:include_today_game', environment: ENV['RAILS_ENV']
 end
 
-every 1.day, at: '15:27' do
+every 1.day, at: '15:30' do
   rake 'chatroom:create', environment: ENV['RAILS_ENV']
 end
 
