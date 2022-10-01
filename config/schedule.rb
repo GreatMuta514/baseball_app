@@ -8,20 +8,23 @@ set :environment, ENV['RAILS_ENV']
 # パスを設定している
 env :PATH, ENV['PATH']
 
+# デフォルトはbashなので、ローカルではzshを使うように設定
+# set :job_template, "/bin/zsh -l -c ':job'"
+
 job_type :rake, 'eval "$(rbenv init -)"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output'
 
-every 1.day, at: '15:30' do
+every 1.day, at: '6:00' do
   rake 'pro_game:include_today_game', environment: ENV['RAILS_ENV']
 end
 
-every 1.day, at: '15:32' do
+every 1.day, at: '6:02' do
   rake 'chatroom:create', environment: ENV['RAILS_ENV']
 end
 
-every 1.day, at: '13:04' do
+every 1.day, at: '6:04' do
   rake 'pro_game:include_yesterday_result', environment: ENV['RAILS_ENV']
 end
 
-every 1.day, at: '13:06' do
+every 1.day, at: '6:06' do
   rake 'pro_game:reflect_predict_result', environment: ENV['RAILS_ENV']
 end
