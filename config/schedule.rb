@@ -8,8 +8,6 @@ set :environment, ENV['RAILS_ENV']
 # パスを設定している
 env :PATH, ENV['PATH']
 
-# 記事から持ってきた
-set :job_template, "/bin/zsh -l -c ':job'"
 job_type :rake, 'eval "$(rbenv init -)"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output'
 
 every 1.day, at: '15:00' do
