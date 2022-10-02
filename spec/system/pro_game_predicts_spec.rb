@@ -11,7 +11,7 @@ RSpec.describe 'ProGamePredicts', type: :system do
   describe '予想機能', js: true do
     it '正常な入力値の時、予想が保存され、コメント送信フォームとコメントが表示される' do
       another_user_comment = FactoryBot.create(:pro_game_predict_comment, :another_user, pro_game: @pro_game)
-      visit game_predicts_path
+      visit game_predict_path(Date.today)
       click_link "today_pro_game_predict_button_#{@pro_game.id}"
       expect(current_path).to eq new_pro_game_pro_game_predict_path(@pro_game)
       expect do
@@ -24,7 +24,7 @@ RSpec.describe 'ProGamePredicts', type: :system do
     end
 
     it '不正な入力値の時、予想が保存されず、コメント送信フォームが表示されていない' do
-      visit game_predicts_path
+      visit game_predict_path(Date.today)
       click_link "today_pro_game_predict_button_#{@pro_game.id}"
       expect(current_path).to eq new_pro_game_pro_game_predict_path(@pro_game)
       expect do
@@ -37,7 +37,7 @@ RSpec.describe 'ProGamePredicts', type: :system do
     end
 
     it 'ユーザーは同じ試合の予想を2つ以上投稿できない' do
-      visit game_predicts_path
+      visit game_predict_path(Date.today)
       click_link "today_pro_game_predict_button_#{@pro_game.id}"
       expect(current_path).to eq new_pro_game_pro_game_predict_path(@pro_game)
       expect do
@@ -50,7 +50,7 @@ RSpec.describe 'ProGamePredicts', type: :system do
 
   describe '予想コメント機能', js: true do
     it '入力値が正しい時、コメントを送信できる' do
-      visit game_predicts_path
+      visit game_predict_path(Date.today)
       click_link "today_pro_game_predict_button_#{@pro_game.id}"
       expect(current_path).to eq new_pro_game_pro_game_predict_path(@pro_game)
       create_game_predict

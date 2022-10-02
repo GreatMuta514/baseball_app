@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   # 予想閲覧機能
-  get 'game_predicts' => 'game_predicts#index'
+  resources :game_predicts, only: [:show]
   get 'game_predicts/confirmation' => 'game_predicts#confirmation'
   get 'game_predicts/results' => 'game_predicts#results'
 

@@ -15,8 +15,7 @@
           <%= link_to 'リアルタイムチャット', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
         </li>
         <li class="nav-item text-light ">
-          <li><%= link_to '今日の試合予想', game_predicts_path, class: 'nav-link' %></li>
-        </li>
+          <li><%= link_to '今日の試合予想', game_predict_path(Date.today), class: 'nav-link' %></li>
         <li class="nav-item">
           <%= link_to '会員登録', new_user_path, class: 'nav-link', aria_current: 'page' %>
         </li>
@@ -40,7 +39,7 @@
             予想
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><%= link_to '今日の試合予想', game_predicts_path, class: 'nav-link' %></li>
+            <li><%= link_to '今日の試合予想', game_predict_path(Date.today), class: 'nav-link' %></li>
             <li><%= link_to '予想結果', game_predicts_results_path, class: 'nav-link' %></li>
           </ul>
         </li>

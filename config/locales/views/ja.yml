@@ -58,3 +58,4 @@ ja:
   time:
     formats:
       default: '%m月%d日 %H:%M'
+      short: "%m月%d日 %H:%M"

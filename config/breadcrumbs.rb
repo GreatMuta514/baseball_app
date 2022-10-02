@@ -8,7 +8,7 @@ crumb :chatroom do |chatroom|
 end
 
 crumb :pro_game_predicts do
-  link '今日の予想', game_predicts_path
+  link '今日の予想', game_predict_path(Date.today)
 end
 
 crumb :pro_game_predict do |pro_game|

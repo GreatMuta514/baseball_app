@@ -1,0 +1,21 @@
+<% breadcrumb :pro_game_predicts %>
+<div class="container text-center">
+  <h1 class="my-3"><%= l Date.today, format: :short %>の試合</h1>
+  <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <%= link_to "< 前の日", game_predict_path(@date.yesterday), class:"page-link" %>
+    </li>
+
+    <li class="page-item">
+      <%= link_to "次の日 >", game_predict_path(@date.tomorrow), class:"page-link" %>
+    </li>
+  </ul>
+</nav>
+  <h2 class="mb-4">プロ野球</h2>
+    <% if @today_pro_games.present? %>
+      <%= render partial: 'today_pro_game', collection: @today_pro_games %>
+    <% else %>
+      <h5>プロ野球は休みです</h5>
+    <% end %>
+</div>

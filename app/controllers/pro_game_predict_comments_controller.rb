@@ -15,7 +15,7 @@ class ProGamePredictCommentsController < ApplicationController
   def destroy; end
 
   private
-  
+
   def pro_game_predict_comment_params
     params.permit(:body, :pro_game_id)
   end
