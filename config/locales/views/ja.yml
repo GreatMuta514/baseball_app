@@ -53,6 +53,8 @@ ja:
   pro_game_predict_comments:
     create:
       danger: コメントを送信できませんでした
+    require_predict:
+      danger: 予想を投稿すればコメントできます
   time:
     formats:
       default: '%m月%d日 %H:%M'
