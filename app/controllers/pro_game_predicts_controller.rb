@@ -1,8 +1,10 @@
 class ProGamePredictsController < ApplicationController
+  before_action :require_login, only: :create
+
   def new
     @today_pro_game = ProGame.find(params[:pro_game_id])
     @pro_game_predict_comments = @today_pro_game.pro_game_predict_comments.order(created_at: :desc).includes(:user, :pro_game)
-    @current_user_predict = current_user.pro_game_predicts.find_by(pro_game_id: params[:pro_game_id])
+    @current_user_predict = current_user.pro_game_predicts.find_by(pro_game_id: params[:pro_game_id]) if current_user
   end
 
   def create

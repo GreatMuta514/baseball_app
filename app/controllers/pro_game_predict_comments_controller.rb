@@ -1,4 +1,6 @@
 class ProGamePredictCommentsController < ApplicationController
+  before_action :require_login
+
   def create
     @pro_game_predict_comment = current_user.pro_game_predict_comments.new(pro_game_predict_comment_params)
     @today_pro_game = ProGame.find(params[:pro_game_id])
@@ -10,6 +12,8 @@ class ProGamePredictCommentsController < ApplicationController
 
   def destroy; end
 
+  private
+  
   def pro_game_predict_comment_params
     params.permit(:body, :pro_game_id)
   end

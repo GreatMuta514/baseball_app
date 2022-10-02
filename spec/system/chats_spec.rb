@@ -56,14 +56,4 @@ RSpec.describe 'Chats', type: :system do
       expect(page).not_to have_content('野球面白い')
     end
   end
-
-  context '未ログイン時' do
-    it 'ログインしていないユーザーはチャットルームに入れない' do
-      chatroom = FactoryBot.create(:chatroom)
-      visit chatrooms_path
-      click_link "entrance-chatroom-#{chatroom.id}"
-      expect(current_path).to eq login_path
-      expect(page).to have_content(I18n.t('all.alert'))
-    end
-  end
 end

@@ -1,5 +1,7 @@
 <div class="container">
   <h1 class="my-3 text-center"><%= t".title" %></h1>
   <%= render 'form', user: @user %>
-  <%= link_to 'Back', users_path %>
+  <div>
+    <%= link_to "ログインはこちら", login_path %>
+  </div>
 </div>
