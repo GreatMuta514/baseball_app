@@ -18,6 +18,6 @@ class GamePredictsController < ApplicationController
   end
 
   def preparation_next_day
-    redirect_back fallback_location: game_predict_path(Date.today), warning: "準備中です" if @date >= Date.tomorrow 
+    redirect_back fallback_location: game_predict_path(Date.today), warning: '準備中です' if @date >= Date.tomorrow
   end
 end

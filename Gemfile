@@ -3,8 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-# ページネーション
-gem 'kaminari'
 # パンくず
 gem 'gretel'
 # bootstrap
