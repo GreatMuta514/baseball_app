@@ -1,5 +1,5 @@
 crumb :chatrooms do
-  link '今日の試合', chatrooms_path
+  link '今日の試合', chatroom_path(Date.today)
 end
 
 crumb :chatroom do |chatroom|

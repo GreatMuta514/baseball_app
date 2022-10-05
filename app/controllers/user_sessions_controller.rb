@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to(:chatrooms, success: t('.success'))
+      redirect_back_or_to chatroom_path(Date.today), success: t('.success')
     else
       flash.now[:danger] = t('.danger')
       render action: 'new'

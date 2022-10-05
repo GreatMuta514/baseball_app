@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
 
   # チャットルーム
-  resources :chatrooms, only: %i[index show] do
-    resources :chats, only: %i[create destroy]
+  resources :chatrooms, only: :show do
+    resources :chats, only: %i[index create destroy]
   end
 
   # ログイン

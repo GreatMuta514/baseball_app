@@ -64,7 +64,7 @@ RSpec.describe 'Users', type: :system do
 
       it '他人のプロフィールの場合、編集・更新できない' do
         visit edit_user_path(another_user)
-        expect(current_path).to eq(chatrooms_path)
+        expect(current_path).to eq(chatroom_path(Date.today))
         expect(page).to have_content('他のユーザーです')
       end
     end

@@ -12,7 +12,7 @@
 
       <% unless current_user %>
         <li class="nav-item text-light ">
-          <%= link_to 'リアルタイムチャット', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
+          <%= link_to 'リアルタイム実況', chatroom_path(Date.today), class: 'nav-link', aria_current: 'page' %>
         </li>
         <li class="nav-item text-light ">
           <li><%= link_to '今日の試合予想', game_predict_path(Date.today), class: 'nav-link' %></li>
@@ -28,7 +28,7 @@
       <% else %>
 
         <li class="nav-item">
-          <%= link_to 'リアルタイム実況', chatrooms_path, class: 'nav-link', aria_current: 'page' %>
+          <%= link_to 'リアルタイム実況', chatroom_path(Date.today), class: 'nav-link', aria_current: 'page' %>
         </li>
 
 

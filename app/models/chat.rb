@@ -5,6 +5,6 @@ class Chat < ApplicationRecord
   validates :body, presence: true, length: { maximum: 100 }, invalid_words: true
 
   def template
-    ApplicationController.renderer.render partial: 'chatrooms/chat', locals: { chat: self }
+    ApplicationController.renderer.render partial: 'chats/chat', locals: { chat: self }
   end
 end

@@ -8,7 +8,7 @@ RSpec.describe 'UserSessions', type: :system do
       fill_in 'email', with: user.email
       fill_in 'password', with: 'password'
       click_button 'ログイン'
-      expect(current_path).to eq chatrooms_path
+      expect(current_path).to eq chatroom_path(Date.today)
       expect(page).to have_content('ログインしました')
     end
 

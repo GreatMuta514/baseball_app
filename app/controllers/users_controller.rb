@@ -61,7 +61,7 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_back fallback_location: chatrooms_path, danger: I18n.t('users.correct_user.danger') if @user != current_user
+    redirect_back fallback_location: chatroom_path(Date.today), danger: I18n.t('users.correct_user.danger') if @user != current_user
   end
 
   def require_logout
@@ -69,6 +69,6 @@ class UsersController < ApplicationController
   end
 
   def rejct_guest_user
-    redirect_back fallback_location: chatrooms_path, danger: t('users.reject_guest_user.danger') if current_user.guest?
+    redirect_back fallback_location: chatroom_path(Date.today), danger: t('users.reject_guest_user.danger') if current_user.guest?
   end
 end
