@@ -1,6 +1,7 @@
 class ProGamePredict < ApplicationRecord
   belongs_to :user
   belongs_to :pro_game
+  has_many :pro_game_predict_comments
 
   enum win_or_lose: { first_base_side_win: 0, third_base_side_win: 1, draw: 2 }
 

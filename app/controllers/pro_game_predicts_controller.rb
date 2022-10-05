@@ -4,15 +4,13 @@ class ProGamePredictsController < ApplicationController
   before_action :time_check, only: :create
 
   def new
-    @pro_game_predict_comments = @today_pro_game.pro_game_predict_comments.order(created_at: :desc).includes(:user, :pro_game)
+    @pro_game_predict_comments = @today_pro_game.pro_game_predict_comments.order(created_at: :desc).includes(:user, :pro_game, :pro_game_predict)
     @current_user_predict = current_user.pro_game_predicts.find_by(pro_game_id: params[:pro_game_id]) if current_user
   end
 
   def create
     @pro_game_predict = current_user.pro_game_predicts.new(predict_params)
-    @pro_game_predict.pro_game_id = params[:pro_game_id]
     @pro_game_predict.input_win_or_lose
-
     if @pro_game_predict.save
       redirect_to request.referer, success: t('.success')
     else
@@ -28,7 +26,7 @@ class ProGamePredictsController < ApplicationController
   private
 
   def predict_params
-    params.permit(:first_base_side_score, :third_base_side_score)
+    params.permit(:first_base_side_score, :third_base_side_score, :pro_game_id)
   end
 
   def set_today_pro_game
