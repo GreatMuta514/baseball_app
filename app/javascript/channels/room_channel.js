@@ -11,11 +11,10 @@ document.addEventListener('turbolinks:load', () => {
 
   const data = document.getElementById('data').dataset;
   const chatroomId = data.chatroomId;
-  const userId = data.userId;
   //actioncable全般
   consumer.subscriptions.create(
     { 
-      channel: "RoomChannel", chatroom_id: chatroomId, user_id: userId
+      channel: "RoomChannel", chatroom_id: chatroomId
     },
     {
       connected() {

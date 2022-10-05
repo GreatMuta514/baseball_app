@@ -1,5 +1,5 @@
 <% breadcrumb :chatroom, @chatroom %>
-<div id="data" data-chatroom-id="<%= @chatroom.id %>" data-user-id="<%= current_user.id %>"></div>
+<div id="data" data-chatroom-id="<%= @chatroom.id %>"></div>
 <div class="container">
   <h1 style="position: fixed; top: 80px; right: 0; left: 0; z-index: 1010; background-color: white;"><%= @chatroom.pro_game.first_base_side_pro_team %> - <%= @chatroom.pro_game.third_base_side_pro_team %></h1>
   <div style="padding-top: 80px; padding-bottom:110px;">
@@ -17,10 +17,3 @@
     <% end %>
   </div>
 </div>
-
-<script>
-window.onunload = function(){
-  // 処理内容を記述
-  console.log('ページを離れます');
-};
-</script>
