@@ -11,10 +11,11 @@ document.addEventListener('turbolinks:load', () => {
 
   const data = document.getElementById('data').dataset;
   const chatroomId = data.chatroomId;
+  const userId = data.userId;
   //actioncable全般
   consumer.subscriptions.create(
     { 
-      channel: "RoomChannel", chatroom_id: chatroomId
+      channel: "RoomChannel", chatroom_id: chatroomId, user_id: userId
     },
     {
       connected() {
@@ -23,17 +24,18 @@ document.addEventListener('turbolinks:load', () => {
     
       disconnected() {
         // Called when the subscription has been terminated by the server
+        
       },
     
       received(data) {
         // データを受け取った時に以下を発動する
         document.getElementById('chat_container').insertAdjacentHTML('beforeend', data['chat']);
         scrollToBottom();
-        // 以下で複製されるバグがなくなる
-        chatContainer.unsbscribe();
       }
     }
   );
+  
+  
     
     //定数定義
     const submittingChatContent = document.getElementById('submitting_chat_content');
@@ -61,6 +63,4 @@ document.addEventListener('turbolinks:load', () => {
     chatButton.addEventListener('click', () => {
       chatButton.classList.add('disabled');
     });
-    
 });
-

@@ -5,7 +5,7 @@ class ChatsController < ApplicationController
     @chat = current_user.chats.new(chat_params)
     @chat.chatroom_id = params[:chatroom_id]
     @chat.save!
-    ActionCable.server.broadcast "room_channel_#{@chat.chatroom_id}", { chat: @chat.template }
+    RoomChannel.broadcast_to("room_channel_#{@chat.chatroom_id}", chat: @chat.template)
   end
 
   def destroy; end
