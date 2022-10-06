@@ -14,7 +14,7 @@
     <p>(140文字以内)</p>
       <%= form_with model: @pro_game_predict_comment, url: pro_game_pro_game_predict_comments_url, local: false, class:'my-3', id: "pro_game_predict_comment_form_#{@today_pro_game.id}" do |f| %>
           <%= f.text_area :body, id:'pro_game_predict_comment_value', class: 'form-control'%>
-          <%= f.submit "送信する", class: 'btn btn-primary my-3' %>
+          <%= f.submit "送信する", class: 'btn btn-outline-primary my-3' %>
       <% end %>
       <div class="pro_game_predict_comments" id="pro_game_predict_comments">
         <%= render partial: 'pro_game_predicts/pro_game_predict_comment', locals: { today_pro_game: @today_pro_game } , collection: @pro_game_predict_comments %>

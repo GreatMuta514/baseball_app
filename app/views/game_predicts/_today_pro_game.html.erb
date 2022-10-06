@@ -1,4 +1,4 @@
-<div class="row one-game mb-3 border border-info border-3">
+<div class="row one-game mb-3 border border-2">
   <div class="col">
     <h4 class="fw-bold mt-3"><%= today_pro_game.first_base_side_pro_team %></h4>
     <%= today_pro_game.first_base_side_pitcher %>
@@ -12,6 +12,6 @@
   </div>
   <div>
 
-    <%= link_to("予想する", new_pro_game_pro_game_predict_path(today_pro_game.id), class:'btn btn-primary mb-2', id: "today_pro_game_predict_button_#{today_pro_game.id}") %>
+    <%= link_to("予想する", new_pro_game_pro_game_predict_path(today_pro_game.id), class:'btn btn-outline-primary mb-2', id: "today_pro_game_predict_button_#{today_pro_game.id}") %>
   </div>
 </div>

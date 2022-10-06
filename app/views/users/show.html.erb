@@ -1,30 +1,35 @@
 <% breadcrumb :user, @user %>
 <p id="notice"><%= notice %></p>
 <div class="container text-center">
-<p>
-  <%= image_tag @user.profile.url, style: 'height:150px; width:150px; border-radius:50%; object-fit: cover;' %>
-</p>
+<div class="pt-4">
+  <p><%= image_tag @user.profile.url, style: 'height:150px; width:150px; border-radius:50%; object-fit: cover;' %></p>
+</div>
 
-<p>
-  <strong>ニックネーム:</strong>
+<h5 class="fw-bold">
   <%= @user.nickname %>
-</p>
+</h5>
 <% if @user == current_user %>
-  <%= link_to t(".edit"), edit_user_path(@user), class: "edit-link-#{@user.id}" %>
-<% end %>
-<h5><%= @user.nickname %> の過去３日の予想履歴</h5>
-    <% @user_predicts.each do |user_predict| %>
-      <%= link_to new_pro_game_pro_game_predict_path(user_predict.pro_game),  class:"text-dark text-decoration-none one-game-predict-result row rounded p-2 mb-3" do %>
-        <div>
-          <div class="row">
-            <h4 class="col fw-bold"><%= user_predict.pro_game.first_base_side_pro_team %></h4>
-            <div class="col">
-              あなたの予想: <p class="fw-bold"><%= user_predict.first_base_side_score %>-<%= user_predict.third_base_side_score %></p>
-              <p class ="col">実際の試合結果: <%= user_predict.pro_game.first_base_side_score %>-<%= user_predict.pro_game.third_base_side_score %></p>
-            </div>
-            <h4 class="col fw-bold"><%= user_predict.pro_game.third_base_side_pro_team %></h4>
-          </div>
-        </div>
-      <% end %>
+    <%= link_to edit_user_path(@user), class: "btn btn-outline-primary edit-link-#{@user.id}" do %>
+      <%= t(".edit") %><i class="fas fa-edit"></i>
     <% end %>
+  <% end %>
+
+<div>
+<h5 class="fw-bold mt-4"><%= @user.nickname %> の過去３日の予想履歴</h5>
+  <% @user_predicts.each do |user_predict| %>
+    <%= link_to new_pro_game_pro_game_predict_path(user_predict.pro_game),  class:"text-dark text-decoration-none one-game-predict-result border row rounded p-2 mb-3" do %>
+      <div>
+        <div class="row">
+          <h4 class="col fw-bold"><%= user_predict.pro_game.first_base_side_pro_team %></h4>
+          <div class="col">
+            あなたの予想: <p class="fw-bold"><%= user_predict.first_base_side_score %>-<%= user_predict.third_base_side_score %></p>
+            <p class ="col">実際の試合結果: <%= user_predict.pro_game.first_base_side_score %>-<%= user_predict.pro_game.third_base_side_score %></p>
+          </div>
+          <h4 class="col fw-bold"><%= user_predict.pro_game.third_base_side_pro_team %></h4>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
 </div>

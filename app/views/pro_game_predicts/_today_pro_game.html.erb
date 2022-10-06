@@ -1,5 +1,5 @@
 <%= form_with model: @pro_game_predict, url: pro_game_pro_game_predicts_url, class: 'border-3' do |f| %>
-<div class="row one-game m-3 border border-info">
+<div class="row one-game m-3 border border-2">
   <div class="col-3 mt-3">
     <h4 class="fw-bold mt-3"><%= today_pro_game.first_base_side_pro_team %></h4>
     <%= today_pro_game.first_base_side_pitcher %>
@@ -20,7 +20,7 @@
     <%= today_pro_game.third_base_side_pitcher %>
   </div>
   <div>
-    <%= f.submit "投票する", class: 'btn btn-primary mb-3', :onclick => "return check_form()" %>
+    <%= f.submit "投票する", class: 'btn btn-outline-primary mb-3', :onclick => "return check_form()" %>
   </div>
 </div>
 <% end %>

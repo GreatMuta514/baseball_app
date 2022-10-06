@@ -8,11 +8,11 @@ ja:
       success: ユーザー登録が完了しました
     index:
       title: ユーザー一覧
-      show: 詳細
-      edit: 編集
+      show: プロフィール詳細
+      edit: プロフィール編集
       destroy: 削除
     show:
-      edit: 編集
+      edit: プロフィール編集
     update:
       success: プロフィールの更新が完了しました
     destroy:
