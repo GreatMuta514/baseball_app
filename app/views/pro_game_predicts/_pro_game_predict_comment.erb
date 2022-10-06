@@ -1,7 +1,11 @@
 <div class="d-flex mb-3">
-  <div>
-    <%= image_tag pro_game_predict_comment.user.profile.url, style: 'width:50px; height:50px; border-radius:50%; object-fit: cover;' %>
-  </div>
+  
+  <%= link_to user_path(pro_game_predict_comment.user), target: :_blank, rel: "noopener noreferrer" do %>
+    <div>
+      <%= image_tag pro_game_predict_comment.user.profile.url, style: 'width:50px; height:50px; border-radius:50%; object-fit: cover;' %>
+    </div>
+  <% end %>
+    
 
   <div>
     <div class="ps-1 fw-bold d-inline">

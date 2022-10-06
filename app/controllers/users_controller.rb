@@ -11,7 +11,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1
-  def show; end
+  def show
+    @user_predicts = @user.pro_game_predicts.where(created_at: Time.current.ago(2.days).beginning_of_day..Time.current)
+  end
 
   # GET /users/new
   def new
