@@ -14,8 +14,7 @@ class ProGamePredictsController < ApplicationController
     if @pro_game_predict.save
       redirect_to request.referer, success: t('.success')
     else
-      render 'pro_game_predicts/new'
-      flash.now[:danger] = t('.danger')
+      redirect_to request.referer, danger: t('.danger')
     end
   end
 
@@ -35,9 +34,7 @@ class ProGamePredictsController < ApplicationController
 
   def time_check
     if @today_pro_game.start_at < Time.current
-      flash.now[:danger] = "試合開始予定時間を過ぎているため投稿できません"
-      render 'pro_game_predicts/new'
-      return false
+      redirect_to request.referer, danger: "試合開始予定時間を過ぎているため投稿できません"
     end
   end
 end

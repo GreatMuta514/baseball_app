@@ -1,8 +1,8 @@
 <div class="background">
   <div class="container">
-    <section class="row top">
+    <div class="row top">
       <h1 class="text-center fw-bold headline">野球好き過ぎてバカなやつだけ集まれ</h1>
-      <div class="row">
+      <div class="row m-0">
         <div class="row">
           <div class="col rounded text-center">
             <h5 class="fw-bold mb-3">すでに登録済みの方</h5>
@@ -19,15 +19,15 @@
           </div>
           <div class="col rounded text-right">
             <h5 class="fw-bold mb-3 text-light">軽く触ってみたい方はこちら</h5>
-            <%= link_to "ゲストで利用する", guest_login_path, method: :post, class: 'btn btn-warning mb-3' %>
+            <%= link_to "ゲストログイン", guest_login_path, method: :post, class: 'btn btn-warning mb-3' %>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </div>
 
-<section class="service-overview bg-light">
+<div class="service-overview bg-light">
   <div class="container">
     <br>
     <h2 class="text-center pt-4 fw-bold">サービス</h2>
@@ -55,5 +55,5 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 <%= render 'shared/footer' %>

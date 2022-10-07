@@ -49,7 +49,7 @@ ja:
   pro_game_predicts:
     create:
       success: 予想を投稿しました。
-      danger: 半角数字で入力してください
+      danger: 予想を投稿できませんでした
   pro_game_predict_comments:
     create:
       danger: コメントを送信できませんでした
@@ -59,3 +59,4 @@ ja:
     formats:
       default: '%m月%d日 %H:%M'
       short: "%m月%d日 %H:%M"
+      short_time: "%m/%d %H:%M"

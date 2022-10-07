@@ -1,15 +1,18 @@
-<div class="d-flex">
+<div class="d-flex my-2">
   <div class="">
   <%= link_to user_path(chat.user), target: :_blank, rel: "noopener noreferrer" do %>
-    <%= image_tag chat.user.profile.url, style: 'width:45px; height:45px; border-radius:50%; object-fit: cover;' %>
+    <%= image_tag chat.user.profile.url, style: 'margin-top:8px; width:45px; height:45px; border-radius:50%; object-fit: cover;' %>
   <% end %>
   </div>
   <div class="">
-    <div class="pt-2 ps-1 fw-bold">
+    <div class="pt-2 fw-bold">
       <%= chat.user.nickname %>
     </div>
-    <div class="px-3 py-2 border rounded bg-light">
-      <%= chat.body %>
+    <div class="d-inline-flex" style="align-items: flex-end;">
+      <div class="px-3 py-2 ms-2 border rounded bg-light">
+        <%= chat.body %>
+      </div>
+      <div class="ms-2" style="font-size: 10px; opacity: 0.6;"><%= l chat.created_at, format: :short_time %></div>
     </div>
   </div>
 </div>
