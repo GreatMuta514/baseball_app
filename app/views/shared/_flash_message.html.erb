@@ -1,3 +1,9 @@
 <% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %> alert-dismissible mb-0"><%= message %><button type="button" class="btn-close pe-0" data-bs-dismiss="alert" aria-label="Close"></button></div>
+  <% if params[:controller] == "chats" && params[:action] == "index" %>
+  <div class="pe-auto position-fixed" style="margin-top:57px; left:0px; right:0px; z-index: 1020;">
+    <div class="alert alert-<%= message_type %> alert-dismissible mb-0"><%= message %><button type="button" class="btn-close pe-0" data-bs-dismiss="alert" aria-label="Close"></button></div>
+  </div>
+  <% else %>
+    <div class="alert alert-<%= message_type %> alert-dismissible mb-0"><%= message %><button type="button" class="btn-close pe-0" data-bs-dismiss="alert" aria-label="Close"></button></div>
+  <% end %>
 <% end %>

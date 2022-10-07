@@ -14,5 +14,5 @@ class User < ApplicationRecord
   validates :reset_password_token, uniqueness: true, allow_nil: true
   validates :role, presence: true
 
-  enum role: { general: 0, admin: 1, guest: 2 }
+  enum role: { general: 0, guest: 1 }
 end

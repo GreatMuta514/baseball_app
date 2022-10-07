@@ -25,6 +25,6 @@ class UserSessionsController < ApplicationController
       role: 'guest'
     )
     auto_login(@guest_user)
-    redirect_back_or_to(:chatrooms, success: t('.success'))
+    redirect_back_or_to chatroom_path(Date.today), success: t('.success')
   end
 end

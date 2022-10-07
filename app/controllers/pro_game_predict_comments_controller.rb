@@ -1,5 +1,6 @@
 class ProGamePredictCommentsController < ApplicationController
   before_action :require_login
+  before_action :reject_guest, only: :create
   before_action :set_current_user_predict, only: :create
   before_action :require_predict, only: :create
 

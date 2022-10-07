@@ -1,5 +1,6 @@
 class ProGamePredictsController < ApplicationController
   before_action :require_login, only: :create
+  before_action :reject_guest, only: :create
   before_action :set_today_pro_game, only: %i[new create]
   before_action :time_check, only: :create
 
