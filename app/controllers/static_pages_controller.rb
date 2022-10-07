@@ -9,6 +9,6 @@ class StaticPagesController < ApplicationController
   private
 
   def already_logged_in
-    redirect_to chatroom_path(Date.today) if current_user
+    redirect_to chatroom_path(Date.today) if current_user && !current_user.guest?
   end
 end

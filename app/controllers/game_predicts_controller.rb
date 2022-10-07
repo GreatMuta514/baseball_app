@@ -1,4 +1,5 @@
 class GamePredictsController < ApplicationController
+  before_action :require_login
   before_action :set_date, only: :show
   before_action :preparation_next_day, only: :show
   def show

@@ -1,6 +1,5 @@
 class ChatsController < ApplicationController
-  before_action :require_login, only: %i[create destroy]
-  before_action :reject_guest_chat_create, only: :create
+  before_action :require_login
 
   def index
     @chatroom = Chatroom.find(params[:chatroom_id])
@@ -21,10 +20,6 @@ class ChatsController < ApplicationController
 
   def chat_params
     params.permit(:body, :chatroom_id)
-  end
-
-  def reject_guest_chat_create
-    redirect_back fallback_location: root_path, danger: "ゲストは利用できません、会員登録かログインしてください" if current_user.guest?
   end
 
 end

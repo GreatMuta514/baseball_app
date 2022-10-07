@@ -1,7 +1,7 @@
 <div class="header">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top application-header">
   <div class="container-fluid">
-    <%= link_to '野球バカ実況', root_path, class:'navbar-brand' %>
+    <div class="fw-bold"><%= link_to '野球バカ実況', root_path, class:'navbar-brand' %></div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,43 +11,36 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
       <% unless current_user %>
-        <li class="nav-item text-light ">
-          <%= link_to 'リアルタイム実況', chatroom_path(Date.today), class: 'nav-link', aria_current: 'page' %>
+        <li class="nav-item">
+          <%= link_to 'ゲストログイン', guest_login_path, method: :post, class: 'nav-link', aria_current: 'page' %>
         </li>
-        <li class="nav-item text-light ">
-          <li><%= link_to '今日の試合予想', game_predict_path(Date.today), class: 'nav-link' %></li>
         <li class="nav-item">
           <%= link_to '会員登録', new_user_path, class: 'nav-link', aria_current: 'page' %>
         </li>
         <li class="nav-item">
           <%= link_to 'ログイン', login_path, class: 'nav-link', aria_current: 'page' %>
         </li>
-        <li class="nav-item">
-          <%= link_to 'ゲストログイン', guest_login_path, method: :post, class: 'nav-link', aria_current: 'page' %>
-        </li>
       <% else %>
-
+        <% if current_user.guest? %>
+          <li class="nav-item">
+          <%= link_to '会員登録', new_user_path, class: 'nav-link', aria_current: 'page' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログイン', login_path, class: 'nav-link', aria_current: 'page' %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to 'リアルタイム実況', chatroom_path(Date.today), class: 'nav-link', aria_current: 'page' %>
         </li>
-
-
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            予想
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><%= link_to '今日の試合予想', game_predict_path(Date.today), class: 'nav-link' %></li>
-          </ul>
+        <li class="nav-item">
+          <%= link_to '今日の試合予想', game_predict_path(Date.today), class: 'nav-link' %>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ユーザー
+            <span class="pe-1">プロフィール</span><i class="fas fa-user"></i>
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><%= link_to 'プロフィール', user_path(current_user), class: 'nav-link' %></li>
             <li><%= link_to 'プロフィール編集', edit_user_path(current_user), class: 'nav-link' %></li>
             <li><%= link_to 'ログアウト', logout_path, method: :post, class: 'nav-link' %></li>
@@ -56,9 +49,9 @@
       <% end %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            その他
+            <span class="pe-1">その他</span><i class="fas fa-cog"></i>
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><%= link_to 'プライバシーポリシー', static_pages_privacy_policy_path, class: 'nav-link' %></li>
             <li><%= link_to '利用規約', static_pages_terms_of_service_path, class: 'nav-link' %></li>
             <li><%= link_to '問い合わせ', "https://twitter.com/baseballapp514", target: :_blank, rel: "noopener noreferrer", class: 'nav-link' %></li>

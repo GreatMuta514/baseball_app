@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  before_action :logout_guest_user, only: :new
+  
   def new; end
 
   def create

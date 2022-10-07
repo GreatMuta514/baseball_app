@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy]
   before_action :require_login, only: %i[index show edit update destroy]
+  before_action :set_user, only: %i[show edit update destroy]
   before_action :correct_user, only: %i[edit update destroy]
-  before_action :require_logout, only: %i[new create]
-  before_action :rejct_guest_user, only: %i[show edit update]
+  before_action :logout_guest_user, only: :new
+  before_action :rejct_guest_user, only: %i[edit update]
 
   # GET /users
   def index
@@ -66,11 +66,8 @@ class UsersController < ApplicationController
     redirect_back fallback_location: chatroom_path(Date.today), danger: I18n.t('users.correct_user.danger') if @user != current_user
   end
 
-  def require_logout
-    redirect_to root_path, danger: I18n.t('users.require_logout.danger') if current_user
-  end
-
   def rejct_guest_user
     redirect_back fallback_location: chatroom_path(Date.today), danger: t('users.reject_guest_user.danger') if current_user.guest?
   end
+
 end

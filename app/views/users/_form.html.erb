@@ -18,7 +18,7 @@
     <%= form.text_field :email, class: 'form-control' %>
   </div>
 
-  <% if current_user %>
+  <% if current_user && !current_user.guest? %>
     <%= link_to "アカウントを削除", user_path, method: :delete, data: { confirm: "アカウントを本当に削除しますか？" }, class: 'text-danger' %>
   <% end %>
 
