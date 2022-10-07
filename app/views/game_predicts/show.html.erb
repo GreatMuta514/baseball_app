@@ -1,6 +1,6 @@
 <% breadcrumb :pro_game_predicts %>
 <div class="container text-center">
-  <h1 class="my-3"><%= l Date.today, format: :short %>の試合</h1>
+  <h1 class="my-3"><%= "#{l @date, format: :short}の試合" %></h1>
   <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
       <li class="page-item">
