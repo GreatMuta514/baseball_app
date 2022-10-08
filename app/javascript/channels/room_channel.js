@@ -70,7 +70,7 @@ document.addEventListener('turbolinks:load', () => {
 function prepareSubscription(userId) {
   const userIdentifier = `"user_id":"${userId}"`;
   // どのユーザーがどのチャンネルをサブスクライブしているかという情報が詰まった配列を取得しsubscriptionsに代入
-  const subscriptions = createConsumer.subscriptions.subscriptions;
+  const subscriptions = r.subscriptions.subscriptions;
   // 以下は配列sabscriptionsからuserIdが含まれているサブスクリプションを見つけ出し、全て削除
   subscriptions.map(function userUnsubscribe(subscription){
     if(subscription.identifier.includes(userIdentifier)){
