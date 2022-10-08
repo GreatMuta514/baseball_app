@@ -66,7 +66,7 @@ document.addEventListener('turbolinks:load', () => {
     });
 });
 
-// 以下はsubscriptionをcreateする直前に呼び出され、一つのユーザーが同時に一つのチャンネルしか購読できないようにしている。
+// 以下はsubscriptionをcreateする直前に呼び出され、一つのユーザーが同時に一つのチャンネルしか購読できないようにしている
 function prepareSubscription(userId) {
   const userIdentifier = `"user_id":"${userId}"`;
   // どのユーザーがどのチャンネルをサブスクライブしているかという情報が詰まった配列を取得しsubscriptionsに代入
