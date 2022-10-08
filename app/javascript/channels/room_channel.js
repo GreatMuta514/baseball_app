@@ -14,6 +14,7 @@ document.addEventListener('turbolinks:load', () => {
   const chatroomId = data.chatroomId;
   const userId = data.userId;
   //actioncable全般
+  if (prepareSubscription(userId)) {
     consumer.subscriptions.create(
       { 
         channel: channel, chatroom_id: chatroomId, user_id: userId
@@ -35,6 +36,7 @@ document.addEventListener('turbolinks:load', () => {
         }
       }
     );
+  };
   
     //定数定義
     const submittingChatContent = document.getElementById('submitting_chat_content');
@@ -63,3 +65,17 @@ document.addEventListener('turbolinks:load', () => {
       chatButton.classList.add('disabled');
     });
 });
+
+// 以下はsubscriptionをcreateする直前に呼び出され、一つのユーザーが同時に一つのチャンネルしか購読できないようにしている。
+function prepareSubscription(userId) {
+  const userIdentifier = `"user_id":"${userId}"`;
+  // どのユーザーがどのチャンネルをサブスクライブしているかという情報が詰まった配列を取得しsubscriptionsに代入
+  const subscriptions = createConsumer.subscriptions.subscriptions;
+  // 以下は配列sabscriptionsからuserIdが含まれているサブスクリプションを見つけ出し、全て削除
+  subscriptions.map(function userUnsubscribe(subscription){
+    if(subscription.identifier.includes(userIdentifier)){
+      subscription.consumer.subscriptions.remove(subscription)
+    };
+  });
+  return true;
+}
