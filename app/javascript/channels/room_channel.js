@@ -14,29 +14,27 @@ document.addEventListener('turbolinks:load', () => {
   const chatroomId = data.chatroomId;
   const userId = data.userId;
   //actioncable全般
-  if (prepareSubscription(userId)) {
-    consumer.subscriptions.create(
-      { 
-        channel: channel, chatroom_id: chatroomId, user_id: userId
+  consumer.subscriptions.create(
+    { 
+      channel: channel, chatroom_id: chatroomId, user_id: userId
+    },
+    {
+      connected() {
+        // Called when the subscription is ready for use on the server
       },
-      {
-        connected() {
-          // Called when the subscription is ready for use on the server
-        },
-      
-        disconnected() {
-          // Called when the subscription has been terminated by the server
-          
-        },
-      
-        received(data) {
-          // データを受け取った時に以下を発動する
-          document.getElementById('chat_container').insertAdjacentHTML('beforeend', data['chat']);
-          scrollToBottom();
-        }
+    
+      disconnected() {
+        // Called when the subscription has been terminated by the server
+        
+      },
+    
+      received(data) {
+        // データを受け取った時に以下を発動する
+        document.getElementById('chat_container').insertAdjacentHTML('beforeend', data['chat']);
+        scrollToBottom();
       }
-    );
-  };
+    }
+  );
   
     //定数定義
     const submittingChatContent = document.getElementById('submitting_chat_content');
@@ -67,15 +65,15 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 // 以下はsubscriptionをcreateする直前に呼び出され、一つのユーザーが同時に一つのチャンネルしか購読できないようにしている
-function prepareSubscription(userId) {
-  const userIdentifier = `"user_id":"${userId}"`;
-  // どのユーザーがどのチャンネルをサブスクライブしているかという情報が詰まった配列を取得しsubscriptionsに代入
-  const subscriptions = r.subscriptions.subscriptions;
-  // 以下は配列sabscriptionsからuserIdが含まれているサブスクリプションを見つけ出し、全て削除
-  subscriptions.map(function userUnsubscribe(subscription){
-    if(subscription.identifier.includes(userIdentifier)){
-      subscription.consumer.subscriptions.remove(subscription)
-    };
-  });
-  return true;
-}
+// function prepareSubscription(userId) {
+//   const userIdentifier = `"user_id":"${userId}"`;
+//   // どのユーザーがどのチャンネルをサブスクライブしているかという情報が詰まった配列を取得しsubscriptionsに代入
+//   const subscriptions = r.subscriptions.subscriptions;
+//   // 以下は配列sabscriptionsからuserIdが含まれているサブスクリプションを見つけ出し、全て削除
+//   subscriptions.map(function userUnsubscribe(subscription){
+//     if(subscription.identifier.includes(userIdentifier)){
+//       subscription.consumer.subscriptions.remove(subscription)
+//     };
+//   });
+//   return true;
+// }
