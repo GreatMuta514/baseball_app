@@ -6,7 +6,7 @@ class ChatsController < ApplicationController
     @chats = Chat.where(chatroom: @chatroom).includes(:user)
     @submitting_chat = Chat.new
   end
-  
+
   def create
     @chat = current_user.chats.new(chat_params)
     @chat.chatroom_id = params[:chatroom_id]
@@ -21,5 +21,4 @@ class ChatsController < ApplicationController
   def chat_params
     params.permit(:body, :chatroom_id)
   end
-
 end

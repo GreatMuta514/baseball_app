@@ -33,8 +33,6 @@ class ProGamePredictsController < ApplicationController
   end
 
   def time_check
-    if @today_pro_game.start_at < Time.current
-      redirect_to request.referer, danger: "試合開始予定時間を過ぎているため投稿できません"
-    end
+    redirect_to request.referer, danger: '試合開始予定時間を過ぎているため投稿できません' if @today_pro_game.start_at < Time.current
   end
 end

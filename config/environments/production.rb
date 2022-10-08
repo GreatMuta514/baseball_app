@@ -6,7 +6,7 @@ Rails.application.configure do
   # action cable
   ActionCable.server.config.disable_request_forgery_protection = true
   config.action_cable.url = 'ws://Elastic IP/cable'
-  config.action_cable.allowed_request_origins = [ 'http://Elastic IP' ] 
+  config.action_cable.allowed_request_origins = ['http://Elastic IP']
   # Code is not reloaded between requests.
   config.cache_classes = true
 

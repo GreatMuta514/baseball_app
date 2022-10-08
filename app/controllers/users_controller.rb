@@ -69,5 +69,4 @@ class UsersController < ApplicationController
   def rejct_guest_user
     redirect_back fallback_location: chatroom_path(Date.today), danger: t('users.reject_guest_user.danger') if current_user.guest?
   end
-
 end

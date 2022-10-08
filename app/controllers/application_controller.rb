@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def reject_guest
-    redirect_back fallback_location: root_path, danger: "ゲストは利用できません、会員登録かログインしてください" if current_user && current_user.guest?
+    redirect_back fallback_location: root_path, danger: 'ゲストは利用できません、会員登録かログインしてください' if current_user && current_user.guest?
   end
 end
