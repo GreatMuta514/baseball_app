@@ -5,6 +5,4 @@ test:
   adapter: test
 
 production:
-  adapter: redis
-  url: redis://baseball-app-redis.3iux8q.ng.0001.apne1.cache.amazonaws.com:6379
-  channel_prefix: baseball_app_production
+  adapter: async
