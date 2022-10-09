@@ -13,18 +13,18 @@ env :PATH, ENV['PATH']
 
 job_type :rake, 'eval "$(rbenv init -)"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output'
 
-every 1.day, at: '6:00' do
+every 1.day, at: '12:40' do
   rake 'pro_game:include_today_game', environment: ENV['RAILS_ENV']
 end
 
-every 1.day, at: '6:02' do
+every 1.day, at: '12:42' do
   rake 'chatroom:create', environment: ENV['RAILS_ENV']
 end
 
-every 1.day, at: '6:04' do
+every 1.day, at: '12:44' do
   rake 'pro_game:include_yesterday_result', environment: ENV['RAILS_ENV']
 end
 
-every 1.day, at: '6:06' do
+every 1.day, at: '12:46' do
   rake 'pro_game:reflect_predict_result', environment: ENV['RAILS_ENV']
 end
