@@ -7,7 +7,7 @@
       <%= render partial: 'chat', collection: @chats, class:'float-end' %>
     </div>
   </div>
-  <div class="mt-3" style=" flex-grow: 1; width:100%; position: relative; position: fixed; bottom: 20px;">
+  <div class="mt-3" style="background-color:white; flex-grow: 1; width:100%; position: relative; position: fixed; bottom: 20px;">
     <%= form_with url: chatroom_chats_url(@chatroom), local: false do |form| %>
       <div class="row">
        <div class="col px-0"><%= form.text_field :body, id: 'submitting_chat_content', class: 'form-control ms-3' %></div>
