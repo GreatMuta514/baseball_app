@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+# メタタグ
+gem 'meta-tags'
 # サイトマップ
 gem 'sitemap_generator'
 # パンくず
