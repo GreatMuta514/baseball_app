@@ -1,8 +1,8 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: '~みんなで実況~ 野球馬鹿スタジアム',
-      title: '~みんなで実況~ 野球馬鹿スタジアム',
+      site: '野球馬鹿スタジアム',
+      title: '野球馬鹿スタジアム',
       reverse: true,
       separator: '|',   #Webサイト名とページタイトルを区切るために使用されるテキスト
       description: '野球の試合を見ながらリアルタイムチャットで話せる。試合の勝敗を予想しコメントで議論できる。野球が好きすぎる人に向けたサービス。',
@@ -14,8 +14,8 @@ module ApplicationHelper
         { href: image_url('ball.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
       ],
       og: {
-        site_name: '~みんなで実況~ 野球馬鹿スタジアム',
-        title: '~みんなで実況~ 野球馬鹿スタジアム',
+        site_name: '野球馬鹿スタジアム',
+        title: '野球馬鹿スタジアム',
         description: '野球の試合を見ながらリアルタイムチャットで話せる。試合の勝敗を予想しコメントで議論できる。野球が好きすぎる人に向けたサービス。', 
         type: 'website',
         url: request.original_url,
