@@ -1,12 +1,12 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: '野球バカ実況',
-      title: '野球バカ実況',
+      site: '~みんなで実況~ 野球馬鹿スタジアム',
+      title: '~みんなで実況~ 野球馬鹿スタジアム',
       reverse: true,
       separator: '|',   #Webサイト名とページタイトルを区切るために使用されるテキスト
       description: '野球の試合を見ながらリアルタイムチャットで話せる。試合の勝敗を予想しコメントで議論できる。野球が好きすぎる人に向けたサービス。',
-      keywords: '野球,バカ,野球バカ,実況,チャット,オープンチャット,勝敗予想,試合予想,スコア予想',   #キーワードを「,」区切りで設定する
+      keywords: '野球,バカ,野球バカ,野球馬鹿,実況,チャット,オープンチャット,勝敗予想,試合予想,スコア予想',   #キーワードを「,」区切りで設定する
       canonical: request.original_url,   #優先するurlを指定する
       noindex: ! Rails.env.production?,
       icon: [                    #favicon、apple用アイコンを指定する
@@ -14,8 +14,8 @@ module ApplicationHelper
         { href: image_url('ball.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
       ],
       og: {
-        site_name: '野球バカ実況',
-        title: '野球バカ実況',
+        site_name: '~みんなで実況~ 野球馬鹿スタジアム',
+        title: '~みんなで実況~ 野球馬鹿スタジアム',
         description: '野球の試合を見ながらリアルタイムチャットで話せる。試合の勝敗を予想しコメントで議論できる。野球が好きすぎる人に向けたサービス。', 
         type: 'website',
         url: request.original_url,
