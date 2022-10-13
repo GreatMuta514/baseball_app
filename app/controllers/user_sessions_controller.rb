@@ -4,7 +4,11 @@ class UserSessionsController < ApplicationController
   def new; end
 
   def create
-    @user = login(params[:email], params[:password], params[:remember_me])
+    @user = if params[:remember_me] == 'true'
+              login(params[:email], params[:password], params[:remember_me])
+            else
+              login(params[:email], params[:password])
+            end
     if @user
       redirect_back_or_to chatroom_path(Date.today), success: t('.success')
     else
