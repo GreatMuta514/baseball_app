@@ -7,6 +7,10 @@
     <%= f.label User.human_attribute_name(:password), class: 'form-label' %><br/>
     <%= f.password_field :password, class: 'form-control'%>
   </div>
+  <div class="field mb-3">
+    <%= f.check_box :remember_me ,{checked: true}, "true", "false" %>
+    <%= f.label :remember_me, "ログインしたままにする", class: 'form-label' %>
+  </div>  
   <div class="actions">
     <%= f.submit t(".button"), class:'btn btn-primary' %>
   </div>
