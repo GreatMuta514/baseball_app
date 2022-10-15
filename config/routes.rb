@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  # 問い合わせ機能
-  resources :contacts, only: %i[new create]
-  get 'contacts/done', to: 'contacts#done'
-
   # 管理者機能
   namespace :admin do
     resources :users, except: %i[new create]
@@ -16,8 +12,6 @@ Rails.application.routes.draw do
 
   # 予想閲覧機能
   resources :game_predicts, only: [:show]
-  get 'game_predicts/confirmation' => 'game_predicts#confirmation'
-  get 'game_predicts/results' => 'game_predicts#results'
 
   # actioncable
   mount ActionCable.server => '/cable'

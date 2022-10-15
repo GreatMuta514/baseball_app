@@ -35,6 +35,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def reject_not_admin_user
-    redirect_to root_path, success: '権限がありません。' unless current_user.role_before_type_cast == 1
+    redirect_to root_path, success: '権限がありません。' unless current_user.role_before_type_cast == 2
   end
 end
