@@ -7,7 +7,6 @@ module ApplicationHelper
       description: '野球の試合を見ながらリアルタイムチャットで話せる。試合の勝敗を予想しコメントで議論できる。野球が好きすぎる人に向けたサービス。',
       keywords: '野球,バカ,野球バカ,野球馬鹿,実況,チャット,オープンチャット,勝敗予想,試合予想,スコア予想', # キーワードを「,」区切りで設定する
       canonical: request.original_url, # 優先するurlを指定する
-      noindex: !Rails.env.production?,
       icon: [  # favicon、apple用アイコンを指定する
         { href: image_url('ball.jpg') },
         { href: image_url('ball.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' }
