@@ -22,7 +22,8 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@baseballapp514'
+        site: '@baseballapp514',
+        image: image_url('top_cover.jpg')
       }
     }
   end
