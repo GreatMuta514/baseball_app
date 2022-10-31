@@ -83,4 +83,4 @@
 - AWS EC2
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/146ac8cc49cda9ae5c32a59d4480fc78.png)](https://gyazo.com/146ac8cc49cda9ae5c32a59d4480fc78)
+![https://i.gyazo.com/146ac8cc49cda9ae5c32a59d4480fc78.png](https://i.gyazo.com/146ac8cc49cda9ae5c32a59d4480fc78.png)
