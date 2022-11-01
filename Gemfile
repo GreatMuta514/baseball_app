@@ -14,14 +14,12 @@ gem 'bootstrap', '~> 5.2.0'
 # herokuデプロイ時に必要
 gem 'net-imap'
 gem 'net-pop'
-# githubにメールアドレスやパスワードをプッシュしないようにしてくれる。
+# パスワードを環境変数で管理する
 gem 'dotenv-rails'
 # cronを使いやすくする
 gem 'whenever'
 # nokogiri
 gem 'open-uri'
-# selenium
-gem 'selenium-webdriver'
 # jQuery
 gem 'jquery-rails'
 # 日本語化機能
