@@ -86,4 +86,4 @@
 ![https://i.gyazo.com/69e0d93fb73dc145d8bc7f3a7daefba2.png](https://i.gyazo.com/69e0d93fb73dc145d8bc7f3a7daefba2.png)
 
 ## インフラ構成図
-![https://i.gyazo.com/cb8bf226662eafb35f13588caf99e469.png](https://i.gyazo.com/cb8bf226662eafb35f13588caf99e469.png)
+![https://i.gyazo.com/6fb0954b7ca015154f1fc27a0e5b5e8c.png](https://i.gyazo.com/6fb0954b7ca015154f1fc27a0e5b5e8c.png)
