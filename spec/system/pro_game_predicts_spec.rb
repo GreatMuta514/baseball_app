@@ -20,7 +20,7 @@ RSpec.describe 'ProGamePredicts', type: :system do
 
       expect(page).not_to have_content('予想を投稿すれば表示されます')
       expect(page).to have_selector("#pro_game_predict_comment_form_#{@pro_game.id}")
-      expect(page).to have_content("#{another_user_comment.body}")
+      expect(page).to have_content(another_user_comment.body.to_s)
     end
 
     it '不正な入力値の時、予想が保存されず、コメント送信フォームが表示されていない' do

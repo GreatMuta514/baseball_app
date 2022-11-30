@@ -84,7 +84,7 @@ namespace :pro_game do
 
     @yesterday_pro_games.each do |yesterday_pro_game|
       # 試合中止か引き分けならばスキップ
-      next if yesterday_pro_game.result_before_type_cast == 3 or yesterday_pro_game.result_before_type_cast == 4
+      next if (yesterday_pro_game.result_before_type_cast == 3) || (yesterday_pro_game.result_before_type_cast == 4)
 
       yesterday_pro_game.pro_game_predicts.each do |pro_game_predict|
         if yesterday_pro_game.first_base_side_score == pro_game_predict.first_base_side_score && yesterday_pro_game.third_base_side_score == pro_game_predict.third_base_side_score
@@ -95,7 +95,7 @@ namespace :pro_game do
           score_difference_02 = (yesterday_pro_game.third_base_side_score - pro_game_predict.third_base_side_score).abs
           pro_game_predict.point -= (score_difference_01 + score_difference_02) * 5
           pro_game_predict.point += 40 if yesterday_pro_game.result == pro_game_predict.win_or_lose
-          pro_game_predict.point = 0 if pro_game_predict.point < 0
+          pro_game_predict.point = 0 if pro_game_predict.point.negative?
         end
 
         pro_game_predict.save!

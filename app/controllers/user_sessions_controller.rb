@@ -27,7 +27,7 @@ class UserSessionsController < ApplicationController
   def guest_login
     @guest_user = User.create(
       nickname: 'ゲスト',
-      email: SecureRandom.alphanumeric(10) + '@email.com',
+      email: "#{SecureRandom.alphanumeric(10)}@email.com",
       password: 'password',
       password_confirmation: 'password',
       role: 'guest'

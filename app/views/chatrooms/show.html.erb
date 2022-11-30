@@ -6,7 +6,9 @@
       <li class="page-item">
         <%= link_to "< 前の日", chatroom_path(@date.yesterday), class:"page-link" %>
       </li>
-
+      <li class="page-item">
+        <%= link_to "最新の試合", chatroom_path("2022-10-22"), class:"page-link" %>
+      </li>
       <li class="page-item">
         <%= link_to "次の日 >", chatroom_path(@date.tomorrow), class:"page-link" %>
       </li>
