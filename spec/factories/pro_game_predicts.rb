@@ -25,5 +25,9 @@ FactoryBot.define do
       first_base_side_score { -1 }
       third_base_side_score { -1 }
     end
+
+    trait :another_user do
+      association :user, :another
+    end
   end
 end
