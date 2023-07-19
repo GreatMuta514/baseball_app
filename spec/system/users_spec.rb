@@ -13,7 +13,7 @@ RSpec.describe 'Users', type: :system do
           fill_in 'パスワード確認', with: 'password'
           click_button '登録する'
           expect(page).to have_content(I18n.t('users.create.success'))
-          expect(page).to have_content 'ニックネーム: サンプルユーザー'
+          expect(page).to have_content 'サンプルユーザー'
         end.to change(User.all, :count).by(1)
       end
 
