@@ -50,5 +50,5 @@ production:
   adapter: mysql2
   database: baseball_app_production
   username: root
-  password: <%= Rails.application.credentials.db[:password] %>
-  host: <%= Rails.application.credentials.db[:hostname] %>
+  password: ''
+  host: ''
