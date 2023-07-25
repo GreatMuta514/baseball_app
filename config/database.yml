@@ -50,5 +50,5 @@ production:
   adapter: mysql2
   database: baseball_app_production
   username: root
-  password: ''
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   host: ''
